@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Dnevnik.iml" filepath="$PROJECT_DIR$/Dnevnik.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DnevnikG.iml" filepath="$PROJECT_DIR$/.idea/modules/DnevnikG.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DnevnikG_main.iml" filepath="$PROJECT_DIR$/.idea/modules/DnevnikG_main.iml" group="DnevnikG" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DnevnikG_test.iml" filepath="$PROJECT_DIR$/.idea/modules/DnevnikG_test.iml" group="DnevnikG" />
+    </modules>
+  </component>
+</project>

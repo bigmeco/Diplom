@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="DnevnikG" external.linked.project.path="$MODULE_DIR$/../../DnevnikG" external.root.project.path="$MODULE_DIR$/../../DnevnikG" external.system.id="GRADLE" external.system.module.group="DnevnikG" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../DnevnikG">
+      <excludeFolder url="file://$MODULE_DIR$/../../DnevnikG/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../DnevnikG/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
