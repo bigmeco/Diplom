@@ -18,16 +18,17 @@
     <android.support.v7.widget.CardView
         android:layout_width="323dp"
         android:layout_height="208dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        app:cardBackgroundColor="@android:color/holo_green_dark"
-        app:layout_constraintHorizontal_bias="0.422"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/jd"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintLeft_toLeftOf="@+id/imageView"
         app:layout_constraintRight_toRightOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        android:layout_marginBottom="8dp">
+        app:layout_constraintVertical_bias="0.498">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -37,43 +38,44 @@
                 android:id="@+id/editText4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:ems="10"
                 android:inputType="textPassword"
-                android:layout_marginLeft="8dp"
+                android:text="Пароль"
+                app:layout_constraintBottom_toTopOf="@+id/button4"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginRight="8dp"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/button4" />
+                app:layout_constraintRight_toRightOf="parent" />
 
             <EditText
                 android:id="@+id/editText3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name"
-                android:layout_marginRight="8dp"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginLeft="8dp"
+                android:text="Логин"
+                app:layout_constraintBottom_toTopOf="@+id/editText4"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/editText4" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button"
+                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
-                app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_marginRight="8dp"
-                app:layout_constraintRight_toRightOf="parent"
+                android:text="Войти"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.502"
-                android:layout_marginBottom="8dp" />
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>
