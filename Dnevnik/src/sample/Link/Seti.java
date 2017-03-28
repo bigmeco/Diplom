@@ -1,7 +1,9 @@
 package sample.Link;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -12,6 +14,12 @@ import java.util.Map;
 public class Seti {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static final String URL = "https://dnevnik.gamekillers.ru/";
+    private static String TOKIN ;
+    private static int STATYS ;
+    private static String id;
+    private static String name;
+    private static String lastname;
+    private static String midlename;
 
     public Jlogin Logining(String login,String password){
         Retrofit retrofit = new Retrofit.Builder()
@@ -24,10 +32,8 @@ public class Seti {
         Map<String,String> mapjs = new HashMap<String, String>();
         mapjs.put("login", "admin");
         mapjs.put("password", "password");
-        // Jlogin jlogin = new Jlogin("admin","password");
-        //   Call<Jlogin> call = service.getLog(jlogin);
-        Call<Object> call = service.getLog(mapjs);
-        Response<Object> response = null;
+        Call<Jlogin> call = service.getLog(mapjs);
+        Response<Jlogin> response = null;
         try {
 
             response = call.execute();
@@ -37,9 +43,25 @@ public class Seti {
         }
         String F = response.body().toString();
         System.out.println(F);
-        Jlogin map = GSON.fromJson(response.body().toString(), Jlogin.class);
+        Jlogin map = response.body();
         System.out.println(map.getInfo().getLastname());
         return map;
+//        call.enqueue(new Callback<Jlogin>() {
+//
+//            @Override
+//            public void onResponse(Call<Jlogin> call, Response<Jlogin> response) {
+//                TOKIN = response.body().getToken();
+//                STATYS = response.body().getStatus();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Jlogin> call, Throwable t) {
+//
+//            }
+//        });
+//
+//
+//        return call;
     }
     public void ResstrPr(String token){
         Retrofit retrofit = new Retrofit.Builder()
@@ -57,32 +79,43 @@ public class Seti {
         mapjs.put("lastname", "2");
         mapjs.put("midlename", "2");
         mapjs.put("type", "1");
-        // Jlogin jlogin = new Jlogin("admin","password");
-        //   Call<Jlogin> call = service.getLog(jlogin);
-        Call<Object> call = service.getReg(mapjs);
-        Response<Object> response = null;
 
-        try {
-            response = call.execute();
+        Call<Jregistr> call = service.getReg(mapjs);
+        call.enqueue(new Callback<Jregistr>() {
+            @Override
+            public void onResponse(Call<Jregistr> call, Response<Jregistr> response) {
+                System.out.println("StudentId  :  " + response.body().getStatus());
+                System.out.println("StGFHFH  :  " + response.body().getInfo().getText());
+            }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-       Gson GSON1 = new Gson();
-        String F = response.body().toString();
-        //F = "{status=0, info={text=FDG FDG HDF}}";
-        System.out.println(F);
+            @Override
+            public void onFailure(Call<Jregistr> call, Throwable t) {
+                System.out.println("onFailure");
+            }
+        });
+
+        // НЕ РАБОТАЕТ (ОСТАВЛЮ ЧТОБ ПОТОМ НЕ ВТАВАТЬ НА ТЕЖЕ ГРАБЛИ)
+//        try {
+//            response = call.execute();
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        String F = String.valueOf(response.body());
+//        String g ;
+//        //F = "{status=0, info={text=FDG FDG HDF}}";
+//        System.out.println(F);
         
-        Map<String,String> map = GSON1.fromJson(F,Map.class);
-        for (Map.Entry e : map.entrySet()){
-           System.out.println(e.getKey()+" "+e.getValue());}
-
-
+//        Map<String,String> map = GSON.fromJson(F,Map.class);
+//        for (Map.Entry e : map.entrySet()){
+//           System.out.println(e.getKey()+" "+e.getValue());
+//        }
 //        Map<String,String> map = GSON.fromJson(response.body().toString(),Map.class);
 //        for (Map.Entry e : map.entrySet()){
 //           System.out.println(e.getKey()+" "+e.getValue());}
-  //  Jregistr map = GSON.fromJson(response.body().toString(), Jregistr.class);
-  //     System.out.println(map.getStatus()+" ggggggg");
+//    Jregistr map = GSON.fromJson(response.body().toString(), Jregistr.class);
+//       System.out.println(map.getStatus()+" ggggggg");
 
     }
 }
