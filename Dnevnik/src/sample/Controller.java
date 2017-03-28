@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import sample.Link.Jlogin;
 import sample.Link.Seti;
 
 import java.io.IOException;
@@ -57,24 +58,22 @@ public class Controller {
         String a = login.getText();
         String b = pasword.getText();
         Seti login = new Seti();
-        login.Logining(a,b);
 
-        login.ResstrPr(login.Logining(a,b).getToken());
-        System.out.println(login.Logining(a,b).getToken());
-
+        Jlogin jlogin = login.Logining(a,b);
+        login.ResstrPr(jlogin.getToken());
+        System.out.println(jlogin.getToken());
 
         try{
-            if(login.Logining(a,b).getStatus()==1){
-                System.out.println(login.Logining(a,b).getType());
-                if(login.Logining(a,b).getType()==0){
+            if(jlogin.getStatus()==1){
+                System.out.println(jlogin.getType());
+                if(jlogin.getType()==0){
                     admin();
-                } else if (login.Logining(a,b).getType()==1){
+                } else if (jlogin.getType()==1){
                     Prepod();
-                } else if (login.Logining(a,b).getType()==2) {
+                } else if (jlogin.getType()==2) {
                     Stydent();
                 }
             }
-           // System.out.println(loginC.getStatus());
         } finally {
             try {
                 in.close();
