@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sample.Link.Jlogin;
+import sample.Link.Jregistr;
 import sample.Link.Seti;
 import sample.Modul.Error;
 
@@ -51,6 +52,7 @@ public class Controller {
 
     private static Seti loginS;
     private static Jlogin jlogin;
+    private static Jregistr jregistr;
 
 
     public void Go(ActionEvent actionEvent) throws IOException {
@@ -129,49 +131,53 @@ public class Controller {
     }
 
     public void Dalie(ActionEvent actionEvent) throws UnsupportedEncodingException {
-        if (cozdat.getText() != "Заполнить") {
-
-            im.setDisable(true);
-            fm.setDisable(true);
-            ot.setDisable(true);
-            logr.setDisable(true);
-            parr.setDisable(true);
-            vizobil7.setDisable(true);
-            vizobil6.setDisable(true);
-            vizobil5.setDisable(true);
-            vizobil4.setDisable(true);
-            vizobil3.setDisable(true);
-            vizobil.setDisable(false);
-            vizobil1.setDisable(false);
-            gryp.setDisable(false);
-            predmet.setDisable(false);
-            plus.setDisable(false);
-            cozdat.setText("Заполнить");
-            Map<String, String> mapjs = new HashMap<String, String>();
-            mapjs.put("token", jlogin.getToken());
-            mapjs.put("login", logr.getText());
-            mapjs.put("password", parr.getText());
-            mapjs.put("name", im.getText());
-            mapjs.put("lastname", fm.getText());
-            mapjs.put("midlename", ot.getText());
-            mapjs.put("type", "1");
-            loginS.ResstrPr(mapjs);
-            plus.setOnAction((ActionEvent e) -> {
-                //  String SILK1 = "http://211-142-528.local/ci/dnevnik/login/" +gryp.getText()+"/"+predmet.getText();
-                String SILK1 = "https://dnevnik.gamekillers.ru/dnevnik/prepodi";
-                //    URL();
-                System.out.println(gryp.getText());
-                gryp.setText("");
-                predmet.setText("");
-
-
-            });
+        Map<String, String> mapjs = new HashMap<String, String>();
+        mapjs.put("token", jlogin.getToken());
+        mapjs.put("login", logr.getText());
+        mapjs.put("password", parr.getText());
+        mapjs.put("name", im.getText());
+        mapjs.put("lastname", fm.getText());
+        mapjs.put("midlename", ot.getText());
+        mapjs.put("type", "1");
+        jregistr = loginS.ResstrPr(mapjs);
+        if (jregistr.getStatus() == 0) {
+            Error.regError(jregistr.getInfo().getText());
         } else {
+            if (cozdat.getText() != "Заполнить") {
+
+                im.setDisable(true);
+                fm.setDisable(true);
+                ot.setDisable(true);
+                logr.setDisable(true);
+                parr.setDisable(true);
+                vizobil7.setDisable(true);
+                vizobil6.setDisable(true);
+                vizobil5.setDisable(true);
+                vizobil4.setDisable(true);
+                vizobil3.setDisable(true);
+                vizobil.setDisable(false);
+                vizobil1.setDisable(false);
+                gryp.setDisable(false);
+                predmet.setDisable(false);
+                plus.setDisable(false);
+                cozdat.setText("Заполнить");
+
+                plus.setOnAction((ActionEvent e) -> {
+                    //  String SILK1 = "http://211-142-528.local/ci/dnevnik/login/" +gryp.getText()+"/"+predmet.getText();
+                    String SILK1 = "https://dnevnik.gamekillers.ru/dnevnik/prepodi";
+                    //    URL();
+                    System.out.println(gryp.getText());
+                    gryp.setText("");
+                    predmet.setText("");
+                    
+                });
+            } else {
 
 
-            // String SILK = "http://211-142-528.local/ci/dnevnik/login/" +gryp.getText()+"/"+predmet.getText();
-            // URL(SILK);
+                // String SILK = "http://211-142-528.local/ci/dnevnik/login/" +gryp.getText()+"/"+predmet.getText();
+                // URL(SILK);
 
+            }
         }
     }
 

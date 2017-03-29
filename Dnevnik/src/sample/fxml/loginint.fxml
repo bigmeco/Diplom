@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Arc?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="185.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<VBox alignment="TOP_CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="185.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
@@ -31,7 +31,7 @@
       <AnchorPane prefHeight="85.0" prefWidth="264.0">
          <children>
             <Arc fill="DODGERBLUE" layoutX="66.0" layoutY="31.0" length="270.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.3" radiusX="166.0" radiusY="141.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
-            <TextField fx:id="login" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="157.0" text="логин" />
+            <TextField fx:id="login" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="157.0" promptText="логин" />
             <Button alignment="CENTER" contentDisplay="TOP" layoutX="204.0" layoutY="12.0" mnemonicParsing="false" onAction="#Go" prefHeight="28.0" prefWidth="60.0" text="Вход" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
@@ -58,7 +58,7 @@
                      </stops>
                   </LinearGradient>
                </textFill></Button>
-            <PasswordField fx:id="pasword" layoutX="14.0" layoutY="50.0" prefHeight="25.0" prefWidth="157.0" text="пароль" />
+            <PasswordField fx:id="pasword" layoutX="14.0" layoutY="50.0" prefHeight="25.0" prefWidth="157.0" promptText="пароль" />
             <Button layoutX="204.0" layoutY="50.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="60.0" text="Выход">
                <textFill>
                   <LinearGradient endX="1.0" endY="0.9666666666666667" startX="1.0">

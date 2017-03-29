@@ -1,7 +1,6 @@
 package sample.Link;
 
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -9,18 +8,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
 public class Seti {
     private static final String URL = "https://dnevnik.gamekillers.ru/";
 
 
-    public Jlogin Logining(String login,String password){
+    public Jlogin Logining(String login, String password) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         GitHubService service = retrofit.create(GitHubService.class);
-        Map<String,String> mapjs = new HashMap<String, String>();
+        Map<String, String> mapjs = new HashMap<String, String>();
         mapjs.put("login", "admin");
         mapjs.put("password", "password");
         Call<Jlogin> call = service.getLog(mapjs);
@@ -44,7 +44,8 @@ public class Seti {
 //        });
 //        return call;
     }
-    public void ResstrPr(Map<String,String> mapjs){
+
+    public Jregistr ResstrPr(Map<String, String> mapjs) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -54,18 +55,15 @@ public class Seti {
 
 
         Call<Jregistr> call = service.getReg(mapjs);
-        call.enqueue(new Callback<Jregistr>() {
-            @Override
-            public void onResponse(Call<Jregistr> call, Response<Jregistr> response) {
-                System.out.println("StudentId  :  " + response.body().getStatus());
-                System.out.println("StGFHFH  :  " + response.body().getInfo().getText());
-            }
+        Response<Jregistr> response = null;
+        try {
+            response = call.execute();
 
-            @Override
-            public void onFailure(Call<Jregistr> call, Throwable t) {
-                System.out.println("onFailure");
-            }
-        });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Jregistr map = response.body();
+        return map;
 
         // НЕ РАБОТАЕТ (ОСТАВЛЮ ЧТОБ ПОТОМ НЕ ВТАВАТЬ НА ТЕЖЕ ГРАБЛИ)
 //        try {
@@ -79,7 +77,7 @@ public class Seti {
 //        String g ;
 //        //F = "{status=0, info={text=FDG FDG HDF}}";
 //        System.out.println(F);
-        
+
 //        Map<String,String> map = GSON.fromJson(F,Map.class);
 //        for (Map.Entry e : map.entrySet()){
 //           System.out.println(e.getKey()+" "+e.getValue());
