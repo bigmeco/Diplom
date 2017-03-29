@@ -21,7 +21,7 @@ public class Seti {
 
         GitHubService service = retrofit.create(GitHubService.class);
         Map<String,String> mapjs = new HashMap<String, String>();
-        mapjs.put("login", "admgin");
+        mapjs.put("login", "admin");
         mapjs.put("password", "password");
         Call<Jlogin> call = service.getLog(mapjs);
         Response<Jlogin> response = null;
@@ -44,21 +44,14 @@ public class Seti {
 //        });
 //        return call;
     }
-    public void ResstrPr(String token){
+    public void ResstrPr(Map<String,String> mapjs){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         GitHubService service = retrofit.create(GitHubService.class);
-        Map<String,String> mapjs = new HashMap<String, String>();
-        mapjs.put("token", "1ca97ded1c66a9b7368d1e558df836de");
-        mapjs.put("login", "2");
-        mapjs.put("password", "2");
-        mapjs.put("name", "2");
-        mapjs.put("lastname", "2");
-        mapjs.put("midlename", "2");
-        mapjs.put("type", "1");
+
 
         Call<Jregistr> call = service.getReg(mapjs);
         call.enqueue(new Callback<Jregistr>() {
