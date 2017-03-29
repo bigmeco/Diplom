@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sample.Link.Jlogin;
 import sample.Link.Seti;
+import sample.Modul.Error;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -52,18 +53,19 @@ public class Controller {
     }
 
 
-
-    //  private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     public void Go(ActionEvent actionEvent) throws IOException {
         String a = login.getText();
         String b = pasword.getText();
-        Seti login = new Seti();
-
-        Jlogin jlogin = login.Logining(a,b);
-        login.ResstrPr(jlogin.getToken());
-        System.out.println(jlogin.getToken());
 
         try{
+            Seti login = new Seti();
+            Jlogin jlogin = login.Logining(a,b);
+            login.ResstrPr(jlogin.getToken());
+            System.out.println(jlogin.getToken());
+            if(jlogin.getToken()==null){
+                Error.warning();
+            }
+
             if(jlogin.getStatus()==1){
                 System.out.println(jlogin.getType());
                 if(jlogin.getType()==0){
@@ -78,7 +80,7 @@ public class Controller {
             try {
                 in.close();
             } catch (IOException ex) {
-              //  Error.error();
+                Error.error();
                 ex.printStackTrace();
             }
         }
@@ -128,7 +130,6 @@ public class Controller {
     if ( cozdat.getText()!="Заполнить"){
         String SILK = "https://dnevnik.gamekillers.ru/dnevnik/new_prepod/" +URLEncoder.encode(im.getText(), "UTF-8")+"/"+URLEncoder.encode(fm.getText(),
                         "UTF-8")+"/"+URLEncoder.encode(ot.getText(), "UTF-8")+"/"+logr.getText()+"/"+parr.getText();
-     //  URL();
 
         im.setDisable(true);
         fm.setDisable(true);

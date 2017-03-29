@@ -21,12 +21,13 @@ public class Seti {
 
         GitHubService service = retrofit.create(GitHubService.class);
         Map<String,String> mapjs = new HashMap<String, String>();
-        mapjs.put("login", "admin");
+        mapjs.put("login", "admgin");
         mapjs.put("password", "password");
         Call<Jlogin> call = service.getLog(mapjs);
         Response<Jlogin> response = null;
         try {
             response = call.execute();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
