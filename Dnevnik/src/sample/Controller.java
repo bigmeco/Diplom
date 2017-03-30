@@ -53,7 +53,41 @@ public class Controller {
     private static Seti loginS;
     private static Jlogin jlogin;
     private static Jregistr jregistr;
+    //private ObservableList<tovar> usersData = FXCollections.observableArrayList();
+    @FXML
+    private void initialize() {
+        initData();
 
+        // устанавливаем тип и значение которое должно хранится в колонке
+//        idT.setCellValueFactory(new PropertyValueFactory<tovar, Integer>("id"));
+//        nameT.setCellValueFactory(new PropertyValueFactory<tovar, String>("name"));
+//        maneT.setCellValueFactory(new PropertyValueFactory<tovar, Integer>("mane"));
+//        kolT.setCellValueFactory(new PropertyValueFactory<tovar, Integer>("Kolijestvo"));
+//        initData2();
+//        idzakazi.setCellValueFactory(new PropertyValueFactory<ISTORIAZ, Integer>("idzakazi"));
+//        idprodovets.setCellValueFactory(new PropertyValueFactory<ISTORIAZ, Integer>("idprodovets"));
+//        idtovar.setCellValueFactory(new PropertyValueFactory<ISTORIAZ, Integer>("idtovar"));
+//        data.setCellValueFactory(new PropertyValueFactory<ISTORIAZ, String>("data"));
+//
+//        // заполняем таблицу данными
+//        tableUsers.setItems(usersData);
+//        TB2.setItems(usersData2);
+
+    }
+    private void initData() {
+//        usersData.add(new tovar(0006,"тыква",700,21));
+//        usersData.add(new tovar(0354,"сгущёнка",76,544));
+//        usersData.add(new tovar(8318,"арбуз",150,13));
+//        usersData.add(new tovar(6387,"ананас",240,35));
+//        usersData.add(new tovar(4863,"сок",120,84));
+//        usersData.add(new tovar(4866,"яблоко",56,35));
+//        usersData.add(new tovar(0120,"творог",89,12));
+//        usersData.add(new tovar(8387,"мясо",320,48));
+
+
+
+        //usersData.add(new tovar(res.getInt("id"),res.getString("name"),res.getInt("mane")));
+    }
 
     public void Go(ActionEvent actionEvent) throws IOException {
         String a = login.getText();
@@ -169,7 +203,7 @@ public class Controller {
                     System.out.println(gryp.getText());
                     gryp.setText("");
                     predmet.setText("");
-                    
+
                 });
             } else {
 
