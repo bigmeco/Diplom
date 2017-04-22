@@ -94,7 +94,7 @@ public class Controller {
         String b = pasword.getText();
         loginS = new Seti();
         jlogin = loginS.Logining(a, b);
-        System.out.println(jlogin.getToken());
+        //System.out.println(jlogin.getToken());
         if (jlogin.getToken() == null) {
             Error.warning();
         }
