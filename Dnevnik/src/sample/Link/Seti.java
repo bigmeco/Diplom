@@ -2,24 +2,22 @@ package sample.Link;
 
 import retrofit2.Call;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import sample.Link.POJO.Jlogin;
+import sample.Link.POJO.Jregistr;
+import sample.Link.ReTrofitM.GitHubService;
+import sample.Link.ReTrofitM.RetrofitN;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Seti {
-    private static final String URL = "https://dnevnik.gamekillers.ru/";
+
+
 
 
     public Jlogin Logining(String login, String password) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        GitHubService service = retrofit.create(GitHubService.class);
+        GitHubService service = new RetrofitN().RetrofMod();
         Map<String, String> mapjs = new HashMap<String, String>();
         mapjs.put("login", "admin");
         mapjs.put("password", "password");
@@ -44,15 +42,21 @@ public class Seti {
 //        });
 //        return call;
     }
+//    public Jregistr GrupAdd(Map<String, String> mapjs) {
+//        GitHubService service = new RetrofitN().RetrofMod();
+//        Call<Jregistr> call = service.getReg(mapjs);
+//        Response<Jregistr> response = null;
+//        try {
+//            response = call.execute();
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        Jregistr map = response.body();
+//        return map;
 
     public Jregistr ResstrPr(Map<String, String> mapjs) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        GitHubService service = retrofit.create(GitHubService.class);
-
+        GitHubService service = new RetrofitN().RetrofMod();
 
         Call<Jregistr> call = service.getReg(mapjs);
         Response<Jregistr> response = null;

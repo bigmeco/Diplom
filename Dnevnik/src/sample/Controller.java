@@ -13,8 +13,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import sample.Link.Jlogin;
-import sample.Link.Jregistr;
+import sample.Link.POJO.Jlogin;
+import sample.Link.POJO.Jregistr;
 import sample.Link.Seti;
 import sample.Modul.Error;
 
@@ -94,7 +94,7 @@ public class Controller {
         String b = pasword.getText();
         loginS = new Seti();
         jlogin = loginS.Logining(a, b);
-        //System.out.println(jlogin.getToken());
+        System.out.println(jlogin.getToken());
         if (jlogin.getToken() == null) {
             Error.warning();
         }

@@ -1,5 +1,5 @@
 
-package sample.Link;
+package sample.Link.POJO;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
