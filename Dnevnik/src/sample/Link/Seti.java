@@ -2,6 +2,7 @@ package sample.Link;
 
 import retrofit2.Call;
 import retrofit2.Response;
+import sample.Link.POJO.Example;
 import sample.Link.POJO.Jlogin;
 import sample.Link.POJO.Jregistr;
 import sample.Link.ReTrofitM.GitHubService;
@@ -42,18 +43,20 @@ public class Seti {
 //        });
 //        return call;
     }
-//    public Jregistr GrupAdd(Map<String, String> mapjs) {
-//        GitHubService service = new RetrofitN().RetrofMod();
-//        Call<Jregistr> call = service.getReg(mapjs);
-//        Response<Jregistr> response = null;
-//        try {
-//            response = call.execute();
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        Jregistr map = response.body();
-//        return map;
+    public Example GrupAdd(Map<String, String> mapjs) {
+        GitHubService service = new RetrofitN().RetrofMod();
+        Call<Example> call = service.getGrup(mapjs);
+        Response<Example> response = null;
+        try {
+            response = call.execute();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Example map = response.body();
+        return map;
+    }
+
 
     public Jregistr ResstrPr(Map<String, String> mapjs) {
         GitHubService service = new RetrofitN().RetrofMod();
@@ -68,6 +71,10 @@ public class Seti {
         }
         Jregistr map = response.body();
         return map;
+
+
+
+
 
         // НЕ РАБОТАЕТ (ОСТАВЛЮ ЧТОБ ПОТОМ НЕ ВТАВАТЬ НА ТЕЖЕ ГРАБЛИ)
 //        try {
