@@ -17,6 +17,7 @@ import sample.Link.POJO.Jlogin;
 import sample.Link.POJO.Jregistr;
 import sample.Link.Seti;
 import sample.Modul.Error;
+import sample.presenter.relLogin;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -92,6 +93,8 @@ public class Controller {
     public void Go(ActionEvent actionEvent) throws IOException {
         String a = login.getText();
         String b = pasword.getText();
+        relLogin relLogin= new relLogin();
+        relLogin.getLogin("admin","password");
         loginS = new Seti();
         jlogin = loginS.Logining(a, b);
         System.out.println(jlogin.getToken());

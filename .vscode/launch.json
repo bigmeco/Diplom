@@ -1,0 +1,113 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "PySpark",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": true,
+            "osx": {
+                "pythonPath": "$SPARK_HOME}/bin/spark-submit"
+            },
+            "windows": {
+                "pythonPath": "$SPARK_HOME}/bin/spark-submit.cmd"
+            },
+            "linux": {
+                "pythonPath": "$SPARK_HOME}/bin/spark-submit"
+            },
+            "program": "${file}",
+            "cwd": "${workspaceRoot}",
+            "env": {},
+            "envFile": "${workspaceRoot}/.env",
+            "debugOptions": [
+                "WaitOnAbnormalExit",
+                "WaitOnNormalExit",
+                "RedirectOutput"
+            ]
+        },
+        {
+            "name": "Watson",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": true,
+            "pythonPath": "$python.pythonPath}",
+            "program": "${workspaceRoot}/console.py",
+            "cwd": "${workspaceRoot}",
+            "args": [
+                "dev",
+                "runserver",
+                "--noreload=True"
+            ],
+            "env": {},
+            "envFile": "${workspaceRoot}/.env",
+            "debugOptions": [
+                "WaitOnAbnormalExit",
+                "WaitOnNormalExit",
+                "RedirectOutput"
+            ]
+        },
+        {
+            "name": "PySpark",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": true,
+            "osx": {
+                "pythonPath": "$SPARK_HOME}/bin/spark-submit"
+            },
+            "windows": {
+                "pythonPath": "$SPARK_HOME}/bin/spark-submit.cmd"
+            },
+            "linux": {
+                "pythonPath": "$SPARK_HOME}/bin/spark-submit"
+            },
+            "program": "${file}",
+            "cwd": "${workspaceRoot}",
+            "env": {},
+            "envFile": "${workspaceRoot}/.env",
+            "debugOptions": [
+                "WaitOnAbnormalExit",
+                "WaitOnNormalExit",
+                "RedirectOutput"
+            ]
+        },
+        {
+            "name": "Flask (old)",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "pythonPath": "$python.pythonPath}",
+            "program": "${workspaceRoot}/run.py",
+            "cwd": "${workspaceRoot}",
+            "args": [],
+            "env": {},
+            "envFile": "${workspaceRoot}/.env",
+            "debugOptions": [
+                "WaitOnAbnormalExit",
+                "WaitOnNormalExit",
+                "RedirectOutput"
+            ]
+        },
+    {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Launch Chrome",
+        "url": "http://localhost:8080",
+        "webRoot": "${workspaceRoot}"
+    },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceRoot}"
+        },
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "webRoot": "${workspaceRoot}"
+        }
+    ]
+}
