@@ -14,7 +14,7 @@ import retrofit2.http.POST;
 public interface intZapros {
     @FormUrlEncoded
     @POST("dnevnik/login")
-    Call<Jlogin> getLog(@Field("login") String login, @Field("password") String password);
+    Observable<Jlogin> getLog(@Field("login") String login, @Field("password") String password);
 
 
 }
