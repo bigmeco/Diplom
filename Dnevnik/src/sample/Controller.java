@@ -94,6 +94,7 @@ public class Controller {
         String a = login.getText();
         String b = pasword.getText();
         relLogin relLogin= new relLogin();
+       // relLogin.retrof();
         relLogin.getLogin("admin","password");
         loginS = new Seti();
         jlogin = loginS.Logining(a, b);

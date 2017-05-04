@@ -11,6 +11,8 @@ import sample.modol.rest.realZapros;
 public class relLogin implements intLogin {
 
 private intZapros login;
+
+
 String s;
 
     public void getLogin(String a, String b){
