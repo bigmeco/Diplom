@@ -24,12 +24,30 @@ public class Main {
         final String s ;
         intZapros call = new realZapros(new RetrofitServ().getRetrofit());
         //Call<Jlogin> call = service.getLog(mapjs);
- Jlogin f ;
                 call.getLog("admin","password")
-                        .map(p-> p.getStatus())
-                        .subscribeOn(Schedulers.newThread())
-                        .observeOn(Schedulers.start())
-                        .subscribe(p -> System.out.println(p));
+                        .observeOn(Schedulers.computation())
+                        .subscribeOn(Schedulers.io())
+                        .subscribe(new Observer<Jlogin>() {
+                            @Override
+                            public void onSubscribe(Disposable d) {
+
+                            }
+
+                            @Override
+                            public void onNext(Jlogin jlogin) {
+                                System.out.println(jlogin.getToken()+"  q");
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+                                System.out.println(e + "errrrrrrrrrrrrrrrror");
+                            }
+
+                            @Override
+                            public void onComplete() {
+                                System.out.println("com");
+                            }
+                        });
 
 //                        .subscribeOn(Schedulers.io())
 //                        .observeOn(Schedulers.io())
@@ -62,5 +80,5 @@ public class Main {
 //        call.getLog("admin","password")
 //.getLog("admin","password");
     }
+    }
 
-}

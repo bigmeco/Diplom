@@ -24,4 +24,6 @@ dependencies {
     compile group: 'org.json', name: 'json', version: '20090211'
     compile group: 'com.squareup.retrofit2', name: 'adapter-rxjava2', version: '2.2.0'
     compile group: 'io.reactivex.rxjava2', name: 'rxjava', version: '2.0.8'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
 }
