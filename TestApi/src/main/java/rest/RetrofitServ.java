@@ -11,8 +11,9 @@ public class RetrofitServ {
     private static final String URL = "https://dnevnik.gamekillers.ru/";
     public static Retrofit getRetrofit() {
         return new Retrofit.Builder()
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+
                 .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .baseUrl(URL)
                 .build();
     }

@@ -1,6 +1,8 @@
 import io.reactivex.Observer;
 import io.reactivex.Scheduler;
 import io.reactivex.disposables.Disposable;
+
+
 import io.reactivex.schedulers.Schedulers;
 import rest.Jlogin;
 import rest.RetrofitServ;
@@ -9,6 +11,7 @@ import rest.realZapros;
 import retrofit2.Call;
 import io.reactivex.Observable;
 import retrofit2.Response;
+import sun.rmi.runtime.Log;
 
 import java.io.IOException;
 
@@ -21,33 +24,33 @@ import static com.sun.activation.registries.LogSupport.log;
 public class Main {
 
     public static void main(String[] args)  {
-        final String s ;
+
         intZapros call = new realZapros(new RetrofitServ().getRetrofit());
-        //Call<Jlogin> call = service.getLog(mapjs);
-                call.getLog("admin","password")
-                        .observeOn(Schedulers.computation())
-                        .subscribeOn(Schedulers.io())
-                        .subscribe(new Observer<Jlogin>() {
-                            @Override
-                            public void onSubscribe(Disposable d) {
 
-                            }
+        call.getLog("admin","password")
+                .observeOn(Schedulers.newThread())
+                .subscribe(new Observer<Jlogin>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        System.out.println("onSubscribe");
+                    }
 
-                            @Override
-                            public void onNext(Jlogin jlogin) {
-                                System.out.println(jlogin.getToken()+"  q");
-                            }
+                    @Override
+                    public void onNext(Jlogin jlogin) {
+                        System.out.println(jlogin.getToken()+"  q");
 
-                            @Override
-                            public void onError(Throwable e) {
-                                System.out.println(e + "errrrrrrrrrrrrrrrror");
-                            }
+                    }
 
-                            @Override
-                            public void onComplete() {
-                                System.out.println("com");
-                            }
-                        });
+                    @Override
+                    public void onError(Throwable e) {
+                        System.out.println(e + "errrrrrrrrrrrrrrrror");
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        System.out.println("com");
+                    }
+                });
 
 //                        .subscribeOn(Schedulers.io())
 //                        .observeOn(Schedulers.io())
