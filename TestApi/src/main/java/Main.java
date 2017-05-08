@@ -24,35 +24,14 @@ import static com.sun.activation.registries.LogSupport.log;
 public class Main {
 
     public static void main(String[] args)  {
-
+        final Jlogin[] jlogin = {new Jlogin()};
         intZapros call = new realZapros(new RetrofitServ().getRetrofit());
+         String threadName = Thread.currentThread().getName();
 
         call.getLog("admin","password")
-                .observeOn(Schedulers.newThread())
-                .subscribe(new Observer<Jlogin>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-                        System.out.println("onSubscribe");
-                    }
-
-                    @Override
-                    public void onNext(Jlogin jlogin) {
-                        System.out.println(jlogin.getToken()+"  q");
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        System.out.println(e + "errrrrrrrrrrrrrrrror");
-                    }
-
-                    @Override
-                    public void onComplete() {
-                        System.out.println("com");
-                    }
-                });
-
-//                        .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.io())
+                .subscribe(s-> jlogin[0]=s);
+               //                        .subscribeOn(Schedulers.io())
 //                        .observeOn(Schedulers.io())
 //                        .map(Jlogin::getInfo)
 //                        //.map(Jlogin::getInfo)
