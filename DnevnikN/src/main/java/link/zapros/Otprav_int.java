@@ -14,7 +14,7 @@ import static link.zapros.realZapros.getRetrofit;
  */
 public interface Otprav_int {
 
-    Jlogin OtpLog( String login,String password);
-    Jregistr OtpReg(Map<String, String> map);
-    Jgrup OtpGrup(Map<String, String> map);
+    void OtpLog( String login,String password);
+    void OtpReg(Map<String, String> map);
+    void OtpGrup(Map<String, String> map);
 }

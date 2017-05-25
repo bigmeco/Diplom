@@ -1,12 +1,7 @@
 package link.zapros;
 
-import POJO.Jgrup;
-import POJO.Jlogin;
-import POJO.Jregistr;
-import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;
-import link.zapros.Retrofit_int;
-import link.zapros.realZapros;
+import link.otvet.OtvJlog;
 
 import java.util.Map;
 
@@ -20,22 +15,21 @@ public class Otpravka implements Otprav_int {
 
 
     @Override
-    public Jlogin OtpLog(String login,String password) {
-        Jlogin jlogin =
+    public void OtpLog(String login,String password) {
         call.getLog("admin","password")
                 .observeOn(Schedulers.io())
-                .subscribe(s-> new Jlogin() );
+                .subscribe(s-> OtvJlog.getJlog(s));
        // System.out.println(jlogin[0].getInfo().getLastname());
-        return jlogin;
+
     }
 
     @Override
-    public Jregistr OtpReg(Map<String, String> map) {
-        return null;
+    public void OtpReg(Map<String, String> map) {
+
     }
 
     @Override
-    public Jgrup OtpGrup(Map<String, String> map) {
-        return null;
+    public void OtpGrup(Map<String, String> map) {
+
     }
 }

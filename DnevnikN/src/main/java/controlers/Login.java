@@ -5,8 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import link.otvet.OtvLog;
-import link.zapros.Otprav_int;
+import link.otvet.OtvJlog;
 import link.zapros.Otpravka;
 
 /**
@@ -46,9 +45,10 @@ public class Login {
     public void Go(ActionEvent actionEvent) {
         String a = login.getText();
         String b = pasword.getText();
-        OtvLog fg = new OtvLog();
-        int r = fg.OtvLog(a,b);
-
+        Otpravka fg = new Otpravka();
+        fg.OtpLog(a, b);
+        OtvJlog otvJlog = new OtvJlog();
+        otvJlog.OtvLog();
 
     }
 }

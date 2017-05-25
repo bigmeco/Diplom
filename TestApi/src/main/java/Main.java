@@ -30,9 +30,7 @@ public class Main {
         //System.out.println(jlogin[0].getInfo().getName());
         call.getLog("admin","password")
                 .observeOn(Schedulers.io())
-                .subscribe(jlogin->
-                        ff.sst(jlogin)
-                    );
+                .subscribe(jlogin-> ff.sst(jlogin));
 
        // System.out.println(intlog.sst());
                //                        .subscribeOn(Schedulers.io())

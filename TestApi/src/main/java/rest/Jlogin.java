@@ -8,6 +8,7 @@ import com.google.gson.annotations.SerializedName;
  */
 public class Jlogin {
 
+
     @SerializedName("status")
     @Expose
     private Integer status;
