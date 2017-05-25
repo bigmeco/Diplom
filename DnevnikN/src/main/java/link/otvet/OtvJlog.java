@@ -16,12 +16,13 @@ import static java.lang.System.in;
  */
 public class OtvJlog {
     static int res = 5;
-        static Jlogin jloginO;
+    static Jlogin jloginO;
 
     public static void getJlog(Jlogin jlogin) {
-        jloginO =jlogin;
+        jloginO = jlogin;
     }
-    public void OtvLog(){
+
+    public void OtvLog() {
         if (jloginO.getToken() == null) {
             // Error.warning();
         }
