@@ -21,11 +21,12 @@ public class Otpravka implements Otprav_int {
 
     @Override
     public Jlogin OtpLog(String login,String password) {
-        Jlogin[] jlogin = new Jlogin[0];
+        Jlogin jlogin =
         call.getLog("admin","password")
                 .observeOn(Schedulers.io())
-                .subscribe(s-> jlogin[0]=s);
-        return jlogin[0];
+                .subscribe(s-> new Jlogin() );
+       // System.out.println(jlogin[0].getInfo().getLastname());
+        return jlogin;
     }
 
     @Override

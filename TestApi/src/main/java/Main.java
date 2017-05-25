@@ -24,13 +24,14 @@ import static com.sun.activation.registries.LogSupport.log;
 public class Main {
 
     public static void main(String[] args)  {
-        final Jlogin[] jlogin = {new Jlogin()};
+
         intZapros call = new realZapros(new RetrofitServ().getRetrofit());
          String threadName = Thread.currentThread().getName();
 
-        call.getLog("admin","password")
+        Jlogin jlogin = call.getLog("admin","password")
                 .observeOn(Schedulers.io())
                 .subscribe(s-> jlogin[0]=s);
+        System.out.println(jlogin[0].getToken());
                //                        .subscribeOn(Schedulers.io())
 //                        .observeOn(Schedulers.io())
 //                        .map(Jlogin::getInfo)
