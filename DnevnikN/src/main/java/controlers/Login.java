@@ -51,4 +51,13 @@ public class Login {
         otvJlog.OtvLog();
 
     }
+
+    public void bec(ActionEvent actionEvent) {
+    }
+
+    public void Dalie(ActionEvent actionEvent) {
+    }
+
+    public void Plus(ActionEvent actionEvent) {
+    }
 }

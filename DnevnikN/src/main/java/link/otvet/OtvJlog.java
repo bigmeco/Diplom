@@ -4,6 +4,7 @@ import POJO.Jlogin;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,7 +21,7 @@ public class OtvJlog {
     public static void getJlog(Jlogin jlogin) {
         jloginO =jlogin;
     }
-    public int OtvLog(){
+    public void OtvLog(){
         if (jloginO.getToken() == null) {
             // Error.warning();
         }
@@ -42,16 +43,14 @@ public class OtvJlog {
                 in.close();
             } catch (IOException ex) {
                 // Error.error();
-                res = 5;
                 ex.printStackTrace();
             }
         }
-        return res;
     }
 
     private void Prepod() throws IOException {
         Stage Prepods = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/prepodlog.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/FXML/prepodlog.fxml"));
         Prepods.setMinHeight(600);
         Prepods.setMinWidth(900);
         Prepods.setScene(new Scene(root, 900, 600));
@@ -61,7 +60,7 @@ public class OtvJlog {
 
     private void admin() throws IOException {
         Stage Prepods = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/DaDmin.fxml"));
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/FXML/admin.fxml"));
         Prepods.setMinHeight(490);
         Prepods.setMinWidth(590);
         Prepods.setScene(new Scene(root, 590, 490));
@@ -72,7 +71,7 @@ public class OtvJlog {
 
     private void Stydent() throws IOException {
         Stage stydents = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/stydentlog.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/FXML/stydentlog.fxml"));
         stydents.setMinHeight(600);
         stydents.setMinWidth(600);
         stydents.setScene(new Scene(root, 600, 600));

@@ -13,14 +13,11 @@ import static link.zapros.realZapros.getRetrofit;
 public class Otpravka implements Otprav_int {
     Retrofit_int call = new realZapros(getRetrofit());
 
-
     @Override
-    public void OtpLog(String login,String password) {
-        call.getLog("admin","password")
+    public void OtpLog(String login, String password) {
+        call.getLog("admin", "password")
                 .observeOn(Schedulers.io())
-                .subscribe(s-> OtvJlog.getJlog(s));
-       // System.out.println(jlogin[0].getInfo().getLastname());
-
+                .subscribe(s -> OtvJlog.getJlog(s));
     }
 
     @Override
