@@ -3,11 +3,9 @@ import io.reactivex.Scheduler;
 import io.reactivex.disposables.Disposable;
 
 
+import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
-import rest.Jlogin;
-import rest.RetrofitServ;
-import rest.intZapros;
-import rest.realZapros;
+import rest.*;
 import retrofit2.Call;
 import io.reactivex.Observable;
 import retrofit2.Response;
@@ -23,15 +21,20 @@ import static com.sun.activation.registries.LogSupport.log;
  */
 public class Main {
 
-    public static void main(String[] args)  {
+    public static void main(String[] args)   {
 
         intZapros call = new realZapros(new RetrofitServ().getRetrofit());
          String threadName = Thread.currentThread().getName();
+        final Jlogin jlogin1 = new Jlogin();
 
-        Jlogin jlogin = call.getLog("admin","password")
+        //System.out.println(jlogin[0].getInfo().getName());
+        call.getLog("admin","password")
                 .observeOn(Schedulers.io())
-                .subscribe(s-> jlogin[0]=s);
-        System.out.println(jlogin[0].getToken());
+                .subscribe(jlogin->
+                        ff.sst(jlogin)
+                    );
+
+       // System.out.println(intlog.sst());
                //                        .subscribeOn(Schedulers.io())
 //                        .observeOn(Schedulers.io())
 //                        .map(Jlogin::getInfo)
@@ -63,5 +66,6 @@ public class Main {
 //        call.getLog("admin","password")
 //.getLog("admin","password");
     }
-    }
+
+}
 
