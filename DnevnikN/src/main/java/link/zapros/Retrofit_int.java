@@ -26,11 +26,11 @@ public interface Retrofit_int {
 
         @FormUrlEncoded
         @POST("dnevnik/register")
-    Call<Jregistr> getReg(@FieldMap Map<String, String> map);
+        Observable<Jregistr> getReg(@FieldMap Map<String, String> map);
 
         @FormUrlEncoded
         @POST("dnevnik/addgroup")
-    Call<Example> getGrup(@FieldMap Map<String, String> map);
+        Observable<Example> getGrup(@FieldMap Map<String, String> map);
 
 }
 

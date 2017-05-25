@@ -18,6 +18,9 @@ public class realZapros implements Retrofit_int {
     private Retrofit retrofit;
     private static final String URL = "https://dnevnik.gamekillers.ru/";
 
+    public realZapros(Retrofit retrofit) {
+        this.retrofit = retrofit;
+    }
 
 
     @Override
@@ -27,13 +30,15 @@ public class realZapros implements Retrofit_int {
     }
 
     @Override
-    public Call<Jregistr> getReg(Map<String, String> map) {
-        return null;
+    public Observable<Jregistr> getReg(Map<String, String> map) {
+        Retrofit_int service = getRetrofit().create(Retrofit_int.class);
+        return service.getReg(map);
     }
 
     @Override
-    public Call<Example> getGrup(Map<String, String> map) {
-        return null;
+    public Observable<Example> getGrup(Map<String, String> map) {
+        Retrofit_int service = getRetrofit().create(Retrofit_int.class);
+        return service.getGrup(map);
     }
 
 
