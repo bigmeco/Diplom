@@ -1,10 +1,9 @@
 package link.zapros;
 
-import POJO.Example;
+import POJO.Jgrup;
 import POJO.Jlogin;
 import POJO.Jregistr;
 import io.reactivex.Observable;
-import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -36,7 +35,7 @@ public class realZapros implements Retrofit_int {
     }
 
     @Override
-    public Observable<Example> getGrup(Map<String, String> map) {
+    public Observable<Jgrup> getGrup(Map<String, String> map) {
         Retrofit_int service = getRetrofit().create(Retrofit_int.class);
         return service.getGrup(map);
     }

@@ -1,10 +1,9 @@
 package link.zapros;
 
-import POJO.Example;
+import POJO.Jgrup;
 import POJO.Jlogin;
 import POJO.Jregistr;
 import io.reactivex.Observable;
-import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
@@ -30,7 +29,7 @@ public interface Retrofit_int {
 
         @FormUrlEncoded
         @POST("dnevnik/addgroup")
-        Observable<Example> getGrup(@FieldMap Map<String, String> map);
+        Observable<Jgrup> getGrup(@FieldMap Map<String, String> map);
 
 }
 

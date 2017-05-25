@@ -20,6 +20,7 @@ public class realZapros implements intZapros {
     @Override
     public Observable<Jlogin> getLog(String login, String password) {
         intZapros service = retrofit.create(intZapros.class);
+
         return service.getLog(login, password);
     }
 
