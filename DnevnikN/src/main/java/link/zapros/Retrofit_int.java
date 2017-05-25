@@ -1,12 +1,15 @@
 package link.zapros;
 
+import POJO.Example;
+import POJO.Jlogin;
+import POJO.Jregistr;
+import io.reactivex.Observable;
 import retrofit2.Call;
+import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
-import sample.Link.POJO.Example;
-import sample.Link.POJO.Jlogin;
-import sample.Link.POJO.Jregistr;
+
 
 import java.util.Map;
 
@@ -17,7 +20,7 @@ import java.util.Map;
 public interface Retrofit_int {
         @FormUrlEncoded
         @POST("dnevnik/login")
-    Call<Jlogin> getLog(@FieldMap Map<String, String> map);
+        Observable<Jlogin> getLog(@Field("login") String login, @Field("password") String password);
 
  //    Call<Jlogin> getLog(@Body Jlogin jlogin);
 
