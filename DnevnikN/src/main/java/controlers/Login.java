@@ -1,10 +1,13 @@
 package controlers;
 
+import POJO.Jlogin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import link.otvet.OtvJlog;
 import link.zapros.Otpravka;
 
@@ -36,26 +39,28 @@ public class Login {
     private Label vizobil;
     @FXML
     private Button plus;
-
+    private static Jlogin jlogin;
 
     public void exit(ActionEvent actionEvent) {
         System.exit(0);
     }
 
     public void Go(ActionEvent actionEvent) {
-        String a = login.getText();
-        String b = pasword.getText();
         Otpravka fg = new Otpravka();
-        fg.OtpLog(a, b);
+        fg.OtpLog(login.getText(), pasword.getText());
         OtvJlog otvJlog = new OtvJlog();
-        otvJlog.OtvLog();
+        jlogin =  otvJlog.OtvLog();
 
     }
 
-    public void bec(ActionEvent actionEvent) {
+    public void bec(ActionEvent actionEvent)throws Exception {
+        Node source = (Node) actionEvent.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.hide();
     }
 
     public void Dalie(ActionEvent actionEvent) {
+        System.out.println(jlogin.getToken());
     }
 
     public void Plus(ActionEvent actionEvent) {

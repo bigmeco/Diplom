@@ -16,13 +16,13 @@ import static java.lang.System.in;
  */
 public class OtvJlog {
     static int res = 5;
-    static Jlogin jloginO;
+    private static Jlogin jloginO;
 
     public static void getJlog(Jlogin jlogin) {
         jloginO = jlogin;
     }
 
-    public void OtvLog() {
+    public Jlogin OtvLog() {
         if (jloginO.getToken() == null) {
             // Error.warning();
         }
@@ -47,6 +47,7 @@ public class OtvJlog {
                 ex.printStackTrace();
             }
         }
+        return jloginO;
     }
 
     private void Prepod() throws IOException {

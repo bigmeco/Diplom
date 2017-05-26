@@ -13,11 +13,11 @@ import java.util.Map;
 /**
  * Created by bigme on 03.05.2017.
  */
-public class realZapros implements Retrofit_int {
+public class Retrofit_real implements Retrofit_int {
     private Retrofit retrofit;
     private static final String URL = "https://dnevnik.gamekillers.ru/";
 
-    public realZapros(Retrofit retrofit) {
+    public Retrofit_real(Retrofit retrofit) {
         this.retrofit = retrofit;
     }
 

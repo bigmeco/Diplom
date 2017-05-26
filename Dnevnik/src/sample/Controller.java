@@ -169,7 +169,7 @@ public class Controller {
     }
 
     public void Dalie(ActionEvent actionEvent) throws UnsupportedEncodingException {
-        Map<String, String> mapjs = new HashMap<String, String>();
+        Map<String, String> mapjs = new HashMap();
         mapjs.put("token", jlogin.getToken());
         mapjs.put("login", logr.getText());
         mapjs.put("password", parr.getText());
