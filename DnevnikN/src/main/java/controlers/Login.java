@@ -9,7 +9,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import link.otvet.OtvJlog;
+import link.otvet.OtvJreg;
 import link.zapros.Otpravka;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by bigme on 22.05.2017.
@@ -46,11 +50,10 @@ public class Login {
     }
 
     public void Go(ActionEvent actionEvent) {
-        Otpravka fg = new Otpravka();
-        fg.OtpLog(login.getText(), pasword.getText());
+        Otpravka otpravka = new Otpravka();
+        otpravka.OtpLog(login.getText(), pasword.getText());
         OtvJlog otvJlog = new OtvJlog();
-        jlogin =  otvJlog.OtvLog();
-
+        jlogin = otvJlog.proverka();
     }
 
     public void bec(ActionEvent actionEvent)throws Exception {
@@ -60,6 +63,18 @@ public class Login {
     }
 
     public void Dalie(ActionEvent actionEvent) {
+        HashMap mapjs = new HashMap();
+        mapjs.put("token", jlogin.getToken());
+        mapjs.put("login", logr.getText());
+        mapjs.put("password", parr.getText());
+        mapjs.put("name", im.getText());
+        mapjs.put("lastname", fm.getText());
+        mapjs.put("midlename", ot.getText());
+        mapjs.put("type", "1");
+        Otpravka otpravka = new Otpravka();
+        otpravka.OtpReg(mapjs);
+        OtvJreg otvJreg = new OtvJreg();
+        otvJreg.dalee();
         System.out.println(jlogin.getToken());
     }
 

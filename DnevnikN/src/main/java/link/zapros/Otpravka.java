@@ -5,6 +5,7 @@ import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import link.otvet.OtvJlog;
+import link.otvet.OtvJreg;
 
 import java.util.Map;
 
@@ -26,9 +27,9 @@ public class Otpravka implements Otprav_int {
 
     @Override
     public void OtpReg(Map<String, String> map) {
-//        call.getReg(map)
-//                .observeOn(Schedulers.io())
-//                .subscribe(s ->);
+        call.getReg(map)
+                .observeOn(Schedulers.io())
+                .subscribe(s -> OtvJreg.getJreg(s));
 
     }
 

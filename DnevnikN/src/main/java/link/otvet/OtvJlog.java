@@ -15,14 +15,13 @@ import static java.lang.System.in;
  * Created by bigme on 25.05.2017.
  */
 public class OtvJlog {
-    static int res = 5;
     private static Jlogin jloginO;
 
     public static void getJlog(Jlogin jlogin) {
         jloginO = jlogin;
     }
 
-    public Jlogin OtvLog() {
+    public Jlogin proverka() {
         if (jloginO.getToken() == null) {
             // Error.warning();
         }
