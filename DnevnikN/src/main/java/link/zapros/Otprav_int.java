@@ -7,7 +7,9 @@ import java.util.Map;
  */
 public interface Otprav_int {
 
-    void OtpLog( String login,String password);
+    void OtpLog(String login, String password);
+
     void OtpReg(Map<String, String> map);
+
     void OtpGrup(Map<String, String> map);
 }

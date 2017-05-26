@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import modul.Errors;
 
 import java.io.IOException;
 
@@ -23,7 +24,7 @@ public class OtvJlog {
 
     public Jlogin proverka() {
         if (jloginO.getToken() == null) {
-            // Error.warning();
+            Errors.warning();
         }
         try {
             if (jloginO.getStatus() == 1) {
@@ -42,7 +43,7 @@ public class OtvJlog {
             try {
                 in.close();
             } catch (IOException ex) {
-                // Error.error();
+                Errors.error();
                 ex.printStackTrace();
             }
         }

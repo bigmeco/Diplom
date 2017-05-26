@@ -17,19 +17,19 @@ import java.util.Map;
  */
 
 public interface Retrofit_int {
-        @FormUrlEncoded
-        @POST("dnevnik/login")
-        Observable<Jlogin> getLog(@Field("login") String login, @Field("password") String password);
+    @FormUrlEncoded
+    @POST("dnevnik/login")
+    Observable<Jlogin> getLog(@Field("login") String login, @Field("password") String password);
 
- //    Call<Jlogin> getLog(@Body Jlogin jlogin);
+    //    Call<Jlogin> getLog(@Body Jlogin jlogin);
 
-        @FormUrlEncoded
-        @POST("dnevnik/register")
-        Observable<Jregistr> getReg(@FieldMap Map<String, String> map);
+    @FormUrlEncoded
+    @POST("dnevnik/register")
+    Observable<Jregistr> getReg(@FieldMap Map<String, String> map);
 
-        @FormUrlEncoded
-        @POST("dnevnik/addgroup")
-        Observable<Jgrup> getGrup(@FieldMap Map<String, String> map);
+    @FormUrlEncoded
+    @POST("dnevnik/addgroup")
+    Observable<Jgrup> getGrup(@FieldMap Map<String, String> map);
 
 }
 

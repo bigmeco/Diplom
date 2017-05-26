@@ -59,7 +59,7 @@ public class Login {
         jlogin = otvJlog.proverka();
     }
 
-    public void bec(ActionEvent actionEvent)throws Exception {
+    public void bec(ActionEvent actionEvent) throws Exception {
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.hide();
