@@ -98,13 +98,21 @@ public class Login {
                 predmet.setDisable(false);
                 plus.setDisable(false);
                 cozdat.setText("Заполнить");
+            }else {
+                
             }
         }
         System.out.println(jregistr.getInfo().getText());
     }
 
     public void Plus(ActionEvent actionEvent) {
-        System.out.println(gryp.getText());
+        HashMap mapjs = new HashMap();
+        mapjs.put("token", jlogin.getToken());
+        mapjs.put("prepod", jregistr.getInfo().getId());
+        mapjs.put("gruppa", gryp.getText());
+        mapjs.put("predmeti", predmet.getText());
+        Otpravka otpravka = new Otpravka();
+        otpravka.OtpGrup(mapjs);
         gryp.setText("");
         predmet.setText("");
     }

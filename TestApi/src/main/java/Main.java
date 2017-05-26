@@ -21,7 +21,7 @@ import static com.sun.activation.registries.LogSupport.log;
  * Created by bigme on 04.05.2017.
  */
 public class Main {
-    static Jlogin  jloginO;
+    static Jlogin jloginO;
     public static void main(String[] args)   {
 
         intZapros call = new realZapros(new RetrofitServ().getRetrofit());
@@ -32,7 +32,6 @@ public class Main {
         call.getLog("admin","password")
                 .observeOn(Schedulers.io())
                 .subscribe(s -> Main.getJlog(s));
-        System.out.println(jloginO.getToken());
 
        // System.out.println(intlog.sst());
                //                        .subscribeOn(Schedulers.io())
@@ -68,8 +67,7 @@ public class Main {
     }
     public static void getJlog(Jlogin jlogin) {
         jloginO = jlogin;
-        System.out.println(jloginO.getToken());
-
+        System.out.println(jlogin.getToken());
     }
 
 

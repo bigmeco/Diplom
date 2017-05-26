@@ -8,13 +8,13 @@ public class Jgrup {
 
     @SerializedName("info")
     @Expose
-    private Info info;
+    private InfoP info;
 
-    public Info getInfo() {
+    public InfoP getInfo() {
         return info;
     }
 
-    public void setInfo(Info info) {
+    public void setInfo(InfoP info) {
         this.info = info;
     }
 
