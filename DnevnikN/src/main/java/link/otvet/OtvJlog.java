@@ -17,7 +17,7 @@ import static java.lang.System.in;
 public class OtvJlog {
     private static Jlogin jloginO;
 
-    public static void getJlog(Jlogin jlogin) {
+    public static void setJlog(Jlogin jlogin) {
         jloginO = jlogin;
     }
 

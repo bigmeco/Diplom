@@ -1,6 +1,10 @@
 package link.otvet;
 
 import POJO.Jregistr;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import modul.Errors;
 
 /**
  * Created by bigme on 26.05.2017.
@@ -8,15 +12,11 @@ import POJO.Jregistr;
 public class OtvJreg {
     private static Jregistr jregistrO;
 
-    public static void getJreg(Jregistr jregistr) {
+    public static void setJreg(Jregistr jregistr) {
         jregistrO = jregistr;
     }
 
-    public void dalee() {
-
-        if (jregistrO.getStatus() == 0) {
-            //Error.regError(jregistr.getInfo().getText());
-            System.out.println("eeeerrror");
-        }
+    public Jregistr getJreg() {
+        return jregistrO;
     }
 }

@@ -1,9 +1,7 @@
 package link.zapros;
 
-import POJO.Jlogin;
-import io.reactivex.Observable;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
+import link.otvet.OtvJgrup;
 import link.otvet.OtvJlog;
 import link.otvet.OtvJreg;
 
@@ -21,7 +19,7 @@ public class Otpravka implements Otprav_int {
     public void OtpLog(String login, String password) {
         call.getLog("admin", "password")
                 .observeOn(Schedulers.io())
-                .subscribe(s -> OtvJlog.getJlog(s));
+                .subscribe(s -> OtvJlog.setJlog(s));
     }
 
 
@@ -29,14 +27,14 @@ public class Otpravka implements Otprav_int {
     public void OtpReg(Map<String, String> map) {
         call.getReg(map)
                 .observeOn(Schedulers.io())
-                .subscribe(s -> OtvJreg.getJreg(s));
+                .subscribe(s -> OtvJreg.setJreg(s));
 
     }
 
     @Override
     public void OtpGrup(Map<String, String> map) {
-//        call.getGrup(map)
-//                .observeOn(Schedulers.io())
-//                .subscribe(s ->);
+        call.getGrup(map)
+                .observeOn(Schedulers.io())
+                .subscribe(s -> OtvJgrup.setJgrup(s));
     }
 }

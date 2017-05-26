@@ -1,6 +1,7 @@
 package controlers;
 
 import POJO.Jlogin;
+import POJO.Jregistr;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -11,9 +12,10 @@ import javafx.stage.Stage;
 import link.otvet.OtvJlog;
 import link.otvet.OtvJreg;
 import link.zapros.Otpravka;
+import modul.Errors;
 
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created by bigme on 22.05.2017.
@@ -44,6 +46,7 @@ public class Login {
     @FXML
     private Button plus;
     private static Jlogin jlogin;
+    private static Jregistr jregistr;
 
     public void exit(ActionEvent actionEvent) {
         System.exit(0);
@@ -74,10 +77,35 @@ public class Login {
         Otpravka otpravka = new Otpravka();
         otpravka.OtpReg(mapjs);
         OtvJreg otvJreg = new OtvJreg();
-        otvJreg.dalee();
-        System.out.println(jlogin.getToken());
+        jregistr = otvJreg.getJreg();
+        if (jregistr.getStatus() == 0) {
+            Errors.regError(jregistr.getInfo().getText());
+        } else {
+            if (!Objects.equals(cozdat.getText(), "Заполнить")) {
+                im.setDisable(true);
+                fm.setDisable(true);
+                ot.setDisable(true);
+                logr.setDisable(true);
+                parr.setDisable(true);
+                vizobil7.setDisable(true);
+                vizobil6.setDisable(true);
+                vizobil5.setDisable(true);
+                vizobil4.setDisable(true);
+                vizobil3.setDisable(true);
+                vizobil.setDisable(false);
+                vizobil1.setDisable(false);
+                gryp.setDisable(false);
+                predmet.setDisable(false);
+                plus.setDisable(false);
+                cozdat.setText("Заполнить");
+            }
+        }
+        System.out.println(jregistr.getInfo().getText());
     }
 
     public void Plus(ActionEvent actionEvent) {
+        System.out.println(gryp.getText());
+        gryp.setText("");
+        predmet.setText("");
     }
 }
