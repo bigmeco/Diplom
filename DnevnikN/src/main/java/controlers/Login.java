@@ -5,15 +5,19 @@ import POJO.Jregistr;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
+import com.jfoenix.transitions.JFXFillTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import link.otvet.OtvJlog;
 import link.otvet.OtvJreg;
 import link.zapros.Otpravka;
@@ -62,11 +66,10 @@ public class Login {
         otpravka.OtpLog(login.getText(), pasword.getText());
         OtvJlog otvJlog = new OtvJlog();
         jlogin = otvJlog.proverka();
+
     }
 
     public void bec(ActionEvent actionEvent) throws Exception {
-
-       ;
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.hide();
@@ -136,15 +139,15 @@ public class Login {
         if (jregistr.getStatus() == 0) {
             Errors.regError(jregistr.getInfo().getText());
         } else {
-        HashMap mapjs = new HashMap();
-        mapjs.put("token", jlogin.getToken());
-        mapjs.put("prepod", jregistr.getInfo().getId());
-        mapjs.put("gruppa", gryp.getText());
-        mapjs.put("predmeti", predmet.getText());
-        Otpravka otpravka = new Otpravka();
-        otpravka.OtpGrup(mapjs);
-        gryp.setText("");
-        predmet.setText("");
-    }
+            HashMap mapjs = new HashMap();
+            mapjs.put("token", jlogin.getToken());
+            mapjs.put("prepod", jregistr.getInfo().getId());
+            mapjs.put("gruppa", gryp.getText());
+            mapjs.put("predmeti", predmet.getText());
+            Otpravka otpravka = new Otpravka();
+            otpravka.OtpGrup(mapjs);
+            gryp.setText("");
+            predmet.setText("");
+        }
     }
 }

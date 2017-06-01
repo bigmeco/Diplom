@@ -1,11 +1,14 @@
 package link.otvet;
 
 import POJO.Jlogin;
+import com.jfoenix.transitions.JFXFillTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import modul.Errors;
 
 import java.io.IOException;
@@ -17,6 +20,7 @@ import static java.lang.System.in;
  */
 public class OtvJlog {
     private static Jlogin jloginO;
+    JFXFillTransition transition, transition2;
 
     public static void setJlog(Jlogin jlogin) {
         jloginO = jlogin;
@@ -68,7 +72,11 @@ public class OtvJlog {
         Prepods.setScene(new Scene(root, 590, 490));
         Prepods.setResizable(false);
         Prepods.show();
-
+        transition = new JFXFillTransition(Duration.millis(6000), root, Color.valueOf("E0F2F1"), Color.valueOf("EDE7F6"));
+        transition2 = new JFXFillTransition(Duration.millis(6000), root, Color.valueOf("EDE7F6"), Color.valueOf("E0F2F1"));
+        transition.setOnFinished(event -> transition2.play());
+        transition2.setOnFinished(event -> transition.play());
+        transition.play();
     }
 
     private void Stydent() throws IOException {

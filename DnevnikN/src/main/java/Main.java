@@ -14,7 +14,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 
 public class Main extends Application {
-    JFXFillTransition transition,transition2,transition3;
+    JFXFillTransition transition,transition2;
     public static void main(String[] args) {
         launch(args);
     }

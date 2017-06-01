@@ -88,7 +88,7 @@
                                             </TextField>
                                         </items>
                                     </ToolBar>
-                                    <Pane layoutY="40.0" prefHeight="432.0" prefWidth="600.0" style="-fx-background-color: #F2F7F6;">
+                                    <Pane fx:id="admcolor" layoutY="40.0" prefHeight="432.0" prefWidth="600.0">
                                         <children>
                                             <Label fx:id="vizobil" disable="true" layoutX="14.0" layoutY="66.0" text="Группа" textAlignment="CENTER">
                                                 <font>
