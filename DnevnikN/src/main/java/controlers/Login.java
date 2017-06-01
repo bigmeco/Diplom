@@ -2,12 +2,17 @@ package controlers;
 
 import POJO.Jlogin;
 import POJO.Jregistr;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.controls.JFXDialogLayout;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import link.otvet.OtvJlog;
 import link.otvet.OtvJreg;
@@ -60,6 +65,8 @@ public class Login {
     }
 
     public void bec(ActionEvent actionEvent) throws Exception {
+
+       ;
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.hide();
@@ -126,6 +133,9 @@ public class Login {
     }
 
     public void Plus(ActionEvent actionEvent) {
+        if (jregistr.getStatus() == 0) {
+            Errors.regError(jregistr.getInfo().getText());
+        } else {
         HashMap mapjs = new HashMap();
         mapjs.put("token", jlogin.getToken());
         mapjs.put("prepod", jregistr.getInfo().getId());
@@ -135,5 +145,6 @@ public class Login {
         otpravka.OtpGrup(mapjs);
         gryp.setText("");
         predmet.setText("");
+    }
     }
 }

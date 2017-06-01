@@ -18,7 +18,6 @@ public class Otpravka implements Otprav_int {
     @Override
     public void OtpLog(String login, String password) {
         call.getLog("admin", "password")
-                .observeOn(Schedulers.io())
                 .subscribe(s -> OtvJlog.setJlog(s));
     }
 
@@ -26,7 +25,6 @@ public class Otpravka implements Otprav_int {
     @Override
     public void OtpReg(Map<String, String> map) {
         call.getReg(map)
-                .observeOn(Schedulers.io())
                 .subscribe(s -> OtvJreg.setJreg(s));
 
     }
@@ -34,7 +32,6 @@ public class Otpravka implements Otprav_int {
     @Override
     public void OtpGrup(Map<String, String> map) {
         call.getGrup(map)
-                .observeOn(Schedulers.io())
                 .subscribe(s -> OtvJgrup.setJgrup(s));
     }
 }

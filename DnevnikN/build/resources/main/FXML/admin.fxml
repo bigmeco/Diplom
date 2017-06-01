@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Accordion?>
@@ -164,11 +165,6 @@
                                             </Accordion>
                                             <TextField fx:id="gryp" disable="true" layoutX="15.0" layoutY="109.0" prefHeight="25.0" prefWidth="124.0" />
                                             <TextField fx:id="predmet" disable="true" layoutX="220.0" layoutY="109.0" prefHeight="25.0" prefWidth="243.0" />
-                                            <Button fx:id="plus" disable="true" layoutX="505.0" layoutY="74.0" mnemonicParsing="false" onAction="#Plus" prefHeight="35.0" prefWidth="35.0" text="+" textAlignment="CENTER">
-                                                <font>
-                                                    <Font name="Arial" size="30.0" />
-                                                </font>
-                                            </Button>
                                             <Label fx:id="vizobil3" layoutX="15.0" layoutY="14.0" text="Имя" textAlignment="CENTER">
                                                 <font>
                                                     <Font size="18.0" />
@@ -234,6 +230,11 @@
                                             </Label>
                                             <TextField fx:id="ot" layoutX="471.0" layoutY="15.0" prefHeight="25.0" prefWidth="115.0" />
                                             <Separator layoutY="40.0" prefHeight="32.0" prefWidth="600.0" />
+                                 <JFXButton fx:id="plus" blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" disable="true" layoutX="498.0" layoutY="72.0" onAction="#Plus" prefHeight="57.0" prefWidth="61.0" ripplerFill="#008024" text="+">
+                                    <font>
+                                       <Font size="28.0" />
+                                    </font>
+                                 </JFXButton>
                                         </children>
                                     </Pane>
                                 </children>

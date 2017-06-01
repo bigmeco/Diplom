@@ -18,7 +18,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 
 public class Main extends Application {
-    JFXFillTransition transition,transition2;
+    JFXFillTransition transition,transition2,transition3;
     public static void main(String[] args) {
         launch(args);
     }
@@ -28,12 +28,11 @@ public class Main extends Application {
         AnchorPane root = FXMLLoader.load(getClass().getResource("FXML/loginint.fxml"));
         primaryStage.setResizable(false);
         primaryStage.setTitle("Diplom");
-        primaryStage.setScene(new Scene(root, 300, 180));
+        primaryStage.setScene(new Scene(root, 1000, 800));
         primaryStage.show();
 
-        transition  = new JFXFillTransition(Duration.millis(3000),root,Color.RED,Color.BLUE);
-        transition2  = new JFXFillTransition(Duration.millis(3000),root,Color.BLUE,Color.RED);
-
+        transition  = new JFXFillTransition(Duration.millis(3000),root,Color.valueOf("4CAF50"),Color.valueOf("009688"));
+        transition2  = new JFXFillTransition(Duration.millis(3000),root,Color.valueOf("009688"),Color.valueOf("4CAF50"));
             transition.setOnFinished(event -> transition2.play());
             transition2.setOnFinished(event -> transition.play());
         transition.play();

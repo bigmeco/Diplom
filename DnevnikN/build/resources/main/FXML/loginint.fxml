@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DisplacementMap?>
-<?import javafx.scene.effect.FloatMap?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Arc?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:controller="controlers.Login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="185.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="185.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.Login">
    <children>
       <Label layoutX="100.0" layoutY="24.0" text="Авторизация " textAlignment="CENTER">
          <font>
@@ -25,46 +18,14 @@
       <AnchorPane layoutX="28.0" layoutY="62.0" prefHeight="85.0" prefWidth="264.0">
          <children>
             <Arc fill="DODGERBLUE" layoutX="66.0" layoutY="31.0" length="270.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.3" radiusX="166.0" radiusY="141.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
-            <TextField fx:id="login" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="157.0" promptText="логин" />
-            <Button alignment="CENTER" contentDisplay="TOP" layoutX="204.0" layoutY="12.0" mnemonicParsing="false" onAction="#Go" prefHeight="28.0" prefWidth="60.0" text="Вход" textAlignment="CENTER">
+            <TextField fx:id="login" layoutX="14.0" layoutY="15.0" prefHeight="25.0" prefWidth="157.0" promptText="логин" />
+            <PasswordField fx:id="pasword" layoutX="14.0" layoutY="50.0" prefHeight="25.0" prefWidth="157.0" promptText="пароль" />
+            <JFXButton buttonType="RAISED" cancelButton="true" graphicTextGap="1.0" layoutX="204.0" layoutY="12.0" onAction="#Go" prefHeight="30.0" prefWidth="60.0" ripplerFill="#009a21" style="-fx-background-color: #004D40;" text="Вход" textFill="WHITE" wrapText="true">
                <font>
                   <Font size="14.0" />
                </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <effect>
-                  <DisplacementMap>
-                     <mapData>
-                        <FloatMap />
-                     </mapData>
-                  </DisplacementMap>
-               </effect>
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="0.780952380952381" startX="1.0" startY="0.24285714285714285">
-                     <stops>
-                        <Stop color="BLACK" />
-                        <Stop color="BLACK" offset="0.007662835249042145" />
-                        <Stop color="#1443ff" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Button>
-            <PasswordField fx:id="pasword" layoutX="14.0" layoutY="50.0" prefHeight="25.0" prefWidth="157.0" promptText="пароль" />
-            <Button layoutX="204.0" layoutY="50.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="60.0" text="Выход">
-               <textFill>
-                  <LinearGradient endX="1.0" endY="0.9666666666666667" startX="1.0">
-                     <stops>
-                        <Stop color="BLACK" />
-                        <Stop color="BLACK" offset="0.27586206896551724" />
-                        <Stop color="RED" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Button>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" cancelButton="true" layoutX="204.0" layoutY="50.0" onAction="#exit" prefHeight="25.0" prefWidth="60.0" ripplerFill="#b50000" style="-fx-background-color: #004D40;" text="Выход" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

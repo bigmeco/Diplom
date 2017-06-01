@@ -17,11 +17,8 @@ repositories {
 }
 
 dependencies{
-    // this dependency is only required when using UserJvmOptionsService
-    // when using Oracle JDK
-    // compile files("${System.properties['java.home']}/../lib/packager.jar")
-    // when using OpenJFX (Ubuntu), please adjust accordingly
-    // compile files("/usr/share/java/openjfx/lib/packager.jar")
+    compile 'com.jfoenix:jfoenix:1.4.0'
+
     compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.6.0'
 // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
     compile group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.2.0'
