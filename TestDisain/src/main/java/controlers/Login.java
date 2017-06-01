@@ -1,12 +1,16 @@
 package controlers;
 
+import com.jfoenix.transitions.JFXFillTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -40,13 +44,20 @@ public class Login {
     @FXML
     private Button plus;
 
+    @FXML
+    private AnchorPane rootPane;
 
     public void exit(ActionEvent actionEvent) {
         System.exit(0);
     }
 
     public void Go(ActionEvent actionEvent) {
-
+        JFXFillTransition transition  = new JFXFillTransition();
+        transition.setDuration(Duration.millis(5000));
+        transition.setRegion(rootPane);
+        transition.setFromValue(Color.WHITE);
+        transition.setToValue(Color.BLUE);
+        transition.play();
     }
 
     public void bec(ActionEvent actionEvent) throws Exception {
