@@ -98,8 +98,28 @@ public class Login {
                 predmet.setDisable(false);
                 plus.setDisable(false);
                 cozdat.setText("Заполнить");
-            }else {
-                
+            } else {
+                cozdat.setText("Создать");
+                im.setDisable(false);
+                im.setText("");
+                fm.setDisable(false);
+                fm.setText("");
+                ot.setDisable(false);
+                ot.setText("");
+                logr.setDisable(false);
+                logr.setText("");
+                parr.setDisable(false);
+                parr.setText("");
+                vizobil7.setDisable(false);
+                vizobil6.setDisable(false);
+                vizobil5.setDisable(false);
+                vizobil4.setDisable(false);
+                vizobil3.setDisable(false);
+                vizobil.setDisable(true);
+                vizobil1.setDisable(true);
+                gryp.setDisable(true);
+                predmet.setDisable(true);
+                plus.setDisable(true);
             }
         }
         System.out.println(jregistr.getInfo().getText());
