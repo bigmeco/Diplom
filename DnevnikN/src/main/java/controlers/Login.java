@@ -2,22 +2,13 @@ package controlers;
 
 import POJO.Jlogin;
 import POJO.Jregistr;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDialog;
-import com.jfoenix.controls.JFXDialogLayout;
-import com.jfoenix.transitions.JFXFillTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import link.otvet.OtvJlog;
 import link.otvet.OtvJreg;
 import link.zapros.Otpravka;
@@ -66,6 +57,7 @@ public class Login {
         otpravka.OtpLog(login.getText(), pasword.getText());
         OtvJlog otvJlog = new OtvJlog();
         jlogin = otvJlog.proverka();
+        System.out.println(jlogin.getToken());
 
     }
 

@@ -1,6 +1,5 @@
 package link.zapros;
 
-import io.reactivex.schedulers.Schedulers;
 import link.otvet.OtvJgrup;
 import link.otvet.OtvJlog;
 import link.otvet.OtvJreg;

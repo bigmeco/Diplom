@@ -1,10 +1,6 @@
 package link.otvet;
 
 import POJO.Jregistr;
-import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import modul.Errors;
 
 /**
  * Created by bigme on 26.05.2017.

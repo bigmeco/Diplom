@@ -31,5 +31,8 @@ public interface Retrofit_int {
     @POST("dnevnik/addgroup")
     Observable<Jgrup> getGrup(@FieldMap Map<String, String> map);
 
+//    @FormUrlEncoded
+//    @POST("dnevnik/users")
+//    Observable<Jgrup> getGrup(@FieldMap Map<String, String> map);
 }
 

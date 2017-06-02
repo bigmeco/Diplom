@@ -1,7 +1,6 @@
 package link.otvet;
 
 import POJO.Jgrup;
-import POJO.Jregistr;
 
 /**
  * Created by bigme on 26.05.2017.
