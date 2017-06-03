@@ -8,6 +8,7 @@ import io.reactivex.Observable;
 import retrofit2.http.*;
 
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -29,8 +30,8 @@ public interface Retrofit_int {
     @POST("dnevnik/addgroup")
     Observable<Jgrup> getGrup(@FieldMap Map<String, String> map);
 
-    @FormUrlEncoded
+
     @GET("dnevnik/users?type=1")
-    Observable<Users> getUser();
+    Observable<List<Users>> getUser();
 }
 

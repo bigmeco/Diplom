@@ -9,6 +9,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -42,7 +43,7 @@ public class Retrofit_real implements Retrofit_int {
     }
 
     @Override
-    public Observable<Users> getUser() {
+    public Observable<List<Users>> getUser() {
         Retrofit_int service = getRetrofit().create(Retrofit_int.class);
         return service.getUser();
     }

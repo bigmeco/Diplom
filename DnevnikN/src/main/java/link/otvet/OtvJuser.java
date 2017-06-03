@@ -2,18 +2,20 @@ package link.otvet;
 
 import POJO.Users;
 
+import java.util.List;
+
 /**
  * Created by bigme on 03.06.2017.
  */
 public class OtvJuser {
 
-    private static Users users;
+    private static List<Users> users;
 
-    public static Users getUsers() {
+    public List<Users> getUsers() {
         return users;
     }
 
-    public static void setUsers(Users users) {
+    public static void setUsers(List<Users> users) {
         OtvJuser.users = users;
     }
 }

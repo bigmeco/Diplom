@@ -8,7 +8,7 @@ public class Users {
 
     @SerializedName("id")
     @Expose
-    private String id;
+    private Integer id;
     @SerializedName("type")
     @Expose
     private String type;
@@ -22,11 +22,26 @@ public class Users {
     @Expose
     private String midlename;
 
-    public String getId() {
+    public Users(Integer id, String type, String name, String lastname, String midlename) {
+        this.id = id;
+        this.type = type;
+        this.name = name;
+        this.lastname = lastname;
+        this.midlename = midlename;
+    }
+
+    public Users(Integer id, String name, String lastname, String midlename) {
+        this.id = id;
+        this.name = name;
+        this.lastname = lastname;
+        this.midlename = midlename;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -21,7 +21,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.Login">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.Admin">
     <opaqueInsets>
         <Insets />
     </opaqueInsets>
@@ -241,16 +241,16 @@
                             </AnchorPane>
                         </content>
                     </Tab>
-                    <Tab text=" Редактирование преподователя ">
+                    <Tab onSelectionChanged="#ObnovTab" text=" Редактирование преподователя ">
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                 <children>
-                                    <TableView prefHeight="472.0" prefWidth="600.0">
+                                    <TableView fx:id="TBusers" prefHeight="472.0" prefWidth="600.0">
                                         <columns>
-                                            <TableColumn prefWidth="61.0" text="ID" />
-                                            <TableColumn prefWidth="148.0" text="Имя" />
-                                            <TableColumn prefWidth="197.0" text="Фамилия" />
-                                            <TableColumn prefWidth="193.0" text="Отчество" />
+                                            <TableColumn fx:id="TKid" prefWidth="61.0" text="ID" />
+                                            <TableColumn fx:id="TKname" prefWidth="148.0" text="Имя" />
+                                            <TableColumn fx:id="TKlastname" prefWidth="197.0" text="Фамилия" />
+                                            <TableColumn fx:id="TKfestname" prefWidth="193.0" text="Отчество" />
                                         </columns>
                                     </TableView>
                                 </children>

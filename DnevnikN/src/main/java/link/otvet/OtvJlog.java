@@ -26,7 +26,7 @@ public class OtvJlog {
         jloginO = jlogin;
     }
 
-    public Jlogin proverka() {
+    public void proverka() {
         if (jloginO.getToken() == null) {
             Errors.warning();
         }
@@ -51,7 +51,7 @@ public class OtvJlog {
                 ex.printStackTrace();
             }
         }
-        return jloginO;
+
     }
 
     private void Prepod() throws IOException {
@@ -77,6 +77,10 @@ public class OtvJlog {
         transition.setOnFinished(event -> transition2.play());
         transition2.setOnFinished(event -> transition.play());
         transition.play();
+    }
+    public Jlogin getJlogin() {
+        System.out.println(jloginO.getToken());
+        return jloginO;
     }
 
     private void Stydent() throws IOException {
