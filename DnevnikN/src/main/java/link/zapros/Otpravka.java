@@ -3,6 +3,7 @@ package link.zapros;
 import link.otvet.OtvJgrup;
 import link.otvet.OtvJlog;
 import link.otvet.OtvJreg;
+import link.otvet.OtvJuser;
 
 import java.util.Map;
 
@@ -32,5 +33,10 @@ public class Otpravka implements Otprav_int {
     public void OtpGrup(Map<String, String> map) {
         call.getGrup(map)
                 .subscribe(s -> OtvJgrup.setJgrup(s));
+    }
+    @Override
+    public void OtpUser() {
+        call.getUser()
+                .subscribe(s -> OtvJuser.setUsers(s));
     }
 }

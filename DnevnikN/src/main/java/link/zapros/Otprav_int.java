@@ -12,4 +12,6 @@ public interface Otprav_int {
     void OtpReg(Map<String, String> map);
 
     void OtpGrup(Map<String, String> map);
+
+    void OtpUser();
 }

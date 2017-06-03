@@ -3,6 +3,7 @@ package link.zapros;
 import POJO.Jgrup;
 import POJO.Jlogin;
 import POJO.Jregistr;
+import POJO.Users;
 import io.reactivex.Observable;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -38,6 +39,12 @@ public class Retrofit_real implements Retrofit_int {
     public Observable<Jgrup> getGrup(Map<String, String> map) {
         Retrofit_int service = getRetrofit().create(Retrofit_int.class);
         return service.getGrup(map);
+    }
+
+    @Override
+    public Observable<Users> getUser() {
+        Retrofit_int service = getRetrofit().create(Retrofit_int.class);
+        return service.getUser();
     }
 
 
