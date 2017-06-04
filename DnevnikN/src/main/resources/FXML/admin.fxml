@@ -4,8 +4,10 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -31,7 +33,7 @@
         <Pane prefHeight="500.0" prefWidth="600.0">
             <TabPane prefHeight="500.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
                 <tabs>
-                    <Tab text=" Добовление преподователя ">
+                    <Tab text="   Добавление  преподователя   ">
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                 <children>
@@ -244,7 +246,7 @@
                             </AnchorPane>
                         </content>
                     </Tab>
-                    <Tab onSelectionChanged="#ObnovTab" text=" Редактирование преподователя ">
+                    <Tab onSelectionChanged="#ObnovTab" text="    Просмотр преподователей     ">
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                 <children>
@@ -274,53 +276,156 @@
                             </AnchorPane>
                         </content>
                     </Tab>
-                    <Tab text="Редактирование групп и предметов">
+                    <Tab text="  Добавление групп и предметов  ">
                         <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                 <children>
-                                    <Pane prefHeight="573.0" prefWidth="600.0">
-                                        <children>
-                                            <TextField layoutX="156.0" layoutY="92.0" prefHeight="25.0" prefWidth="430.0" />
-                                            <Label layoutX="14.0" layoutY="91.0" text="Список групп" textAlignment="CENTER">
+                                    <Pane prefHeight="431.0" prefWidth="600.0">
+                              <children>
+                                 <SplitPane dividerPositions="0.5" prefHeight="430.0" prefWidth="600.0">
+                                   <items>
+                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                          <children>
+                                                        <Label layoutX="61.0" layoutY="14.0" text="Добавление группу" textAlignment="CENTER">
+                                                            <font>
+                                                                <Font size="18.0" />
+                                                            </font>
+                                                            <opaqueInsets>
+                                                                <Insets />
+                                                            </opaqueInsets>
+                                                            <padding>
+                                                                <Insets left="5.0" right="1.0" />
+                                                            </padding>
+                                                            <textFill>
+                                                                <LinearGradient endX="1.0" endY="0.580952380952381" startX="1.0" startY="0.0761904761904762">
+                                                                    <stops>
+                                                                        <Stop color="BLACK" />
+                                                                        <Stop color="#0f9a39" offset="1.0" />
+                                                                    </stops>
+                                                                </LinearGradient>
+                                                            </textFill>
+                                                        </Label>
+                                             <Separator layoutY="41.0" prefHeight="25.0" prefWidth="600.0" />
+                                             <Label fx:id="vizobil31" layoutX="14.0" layoutY="66.0" text="Номер группы" textAlignment="CENTER">
                                                 <font>
-                                                    <Font size="18.0" />
+                                                   <Font size="18.0" />
                                                 </font>
                                                 <opaqueInsets>
-                                                    <Insets />
+                                                   <Insets />
                                                 </opaqueInsets>
                                                 <padding>
-                                                    <Insets left="5.0" right="1.0" />
+                                                   <Insets left="5.0" right="1.0" />
                                                 </padding>
                                                 <textFill>
-                                                    <LinearGradient endX="1.0" endY="0.580952380952381" startX="1.0" startY="0.0761904761904762">
-                                                        <stops>
-                                                            <Stop color="BLACK" />
-                                                            <Stop color="#3573c9" offset="1.0" />
-                                                        </stops>
-                                                    </LinearGradient>
+                                                   <LinearGradient endX="1.0" endY="0.580952380952381" startX="1.0" startY="0.10476190476190476">
+                                                      <stops>
+                                                         <Stop color="BLACK" />
+                                                         <Stop color="#3573c9" offset="1.0" />
+                                                      </stops>
+                                                   </LinearGradient>
                                                 </textFill>
-                                            </Label>
-                                            <Label layoutX="14.0" layoutY="141.0" text="Список предметов" textAlignment="CENTER">
+                                             </Label>
+                                             <Label fx:id="vizobil311" layoutX="14.0" layoutY="160.0" text="Массив с предметами" textAlignment="CENTER">
                                                 <font>
-                                                    <Font size="18.0" />
+                                                   <Font size="18.0" />
                                                 </font>
                                                 <opaqueInsets>
-                                                    <Insets />
+                                                   <Insets />
                                                 </opaqueInsets>
                                                 <padding>
-                                                    <Insets left="5.0" right="1.0" />
+                                                   <Insets left="5.0" right="1.0" />
                                                 </padding>
                                                 <textFill>
-                                                    <LinearGradient endX="1.0" endY="0.580952380952381" startX="1.0" startY="0.0761904761904762">
-                                                        <stops>
-                                                            <Stop color="BLACK" />
-                                                            <Stop color="#3573c9" offset="1.0" />
-                                                        </stops>
-                                                    </LinearGradient>
+                                                   <LinearGradient endX="1.0" endY="0.580952380952381" startX="1.0" startY="0.10476190476190476">
+                                                      <stops>
+                                                         <Stop color="BLACK" />
+                                                         <Stop color="#3573c9" offset="1.0" />
+                                                      </stops>
+                                                   </LinearGradient>
                                                 </textFill>
-                                            </Label>
-                                        </children>
+                                             </Label>
+                                             <TextField layoutX="13.0" layoutY="112.0" prefHeight="25.0" prefWidth="265.0" />
+                                             <ComboBox layoutX="14.0" layoutY="202.0" prefHeight="25.0" prefWidth="269.0" />
+                                          </children>
+                                       </AnchorPane>
+                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="414.0" prefWidth="417.0">
+                                          <children>
+                                                        <Label layoutX="55.0" layoutY="14.0" text="Добавление предмета" textAlignment="CENTER">
+                                                            <font>
+                                                                <Font size="18.0" />
+                                                            </font>
+                                                            <opaqueInsets>
+                                                                <Insets />
+                                                            </opaqueInsets>
+                                                            <padding>
+                                                                <Insets left="5.0" right="1.0" />
+                                                            </padding>
+                                                            <textFill>
+                                                                <LinearGradient endX="1.0" endY="0.580952380952381" startX="1.0" startY="0.0761904761904762">
+                                                                    <stops>
+                                                                        <Stop color="BLACK" />
+                                                                        <Stop color="#a14600" offset="1.0" />
+                                                                    </stops>
+                                                                </LinearGradient>
+                                                            </textFill>
+                                                        </Label>
+                                             <Separator layoutY="41.0" prefHeight="25.0" prefWidth="592.0" />
+                                             <Label fx:id="vizobil312" layoutX="18.0" layoutY="160.0" text="Преподователь" textAlignment="CENTER">
+                                                <font>
+                                                   <Font size="18.0" />
+                                                </font>
+                                                <opaqueInsets>
+                                                   <Insets />
+                                                </opaqueInsets>
+                                                <padding>
+                                                   <Insets left="5.0" right="1.0" />
+                                                </padding>
+                                                <textFill>
+                                                   <LinearGradient endX="1.0" endY="0.580952380952381" startX="1.0" startY="0.10476190476190476">
+                                                      <stops>
+                                                         <Stop color="BLACK" />
+                                                         <Stop color="#3573c9" offset="1.0" />
+                                                      </stops>
+                                                   </LinearGradient>
+                                                </textFill>
+                                             </Label>
+                                             <ComboBox layoutX="14.0" layoutY="202.0" prefHeight="25.0" prefWidth="269.0" />
+                                             <Label fx:id="vizobil313" layoutX="14.0" layoutY="66.0" text="Название предмета" textAlignment="CENTER">
+                                                <font>
+                                                   <Font size="18.0" />
+                                                </font>
+                                                <opaqueInsets>
+                                                   <Insets />
+                                                </opaqueInsets>
+                                                <padding>
+                                                   <Insets left="5.0" right="1.0" />
+                                                </padding>
+                                                <textFill>
+                                                   <LinearGradient endX="1.0" endY="0.580952380952381" startX="1.0" startY="0.10476190476190476">
+                                                      <stops>
+                                                         <Stop color="BLACK" />
+                                                         <Stop color="#3573c9" offset="1.0" />
+                                                      </stops>
+                                                   </LinearGradient>
+                                                </textFill>
+                                             </Label>
+                                             <TextField layoutX="16.0" layoutY="112.0" prefHeight="25.0" prefWidth="265.0" />
+                                          </children>
+                                       </AnchorPane>
+                                   </items>
+                                 </SplitPane>
+                                 <Separator layoutY="430.0" prefHeight="0.0" prefWidth="600.0" />
+                              </children>
                                     </Pane>
+                           <ToolBar layoutY="431.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="600.0">
+                              <items>
+                                 <JFXButton blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" onAction="#bec" prefHeight="14.0" prefWidth="65.0" ripplerFill="#800000" text="⭙">
+                                    <font>
+                                       <Font name="System Bold" size="19.0" />
+                                    </font>
+                                 </JFXButton>
+                              </items>
+                           </ToolBar>
                                 </children>
                             </AnchorPane>
                         </content>
@@ -331,5 +436,6 @@
                 </opaqueInsets>
             </TabPane>
         </Pane>
+                 <TextField layoutX="-574.0" layoutY="150.0" prefHeight="25.0" prefWidth="430.0" />
     </children>
 </AnchorPane>

@@ -69,13 +69,14 @@ public class Admin {
     private ObservableList<Users> usersData = FXCollections.observableArrayList();
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         Otpravka otpravka = new Otpravka();
         otpravka.OtpUser();
         OtvJuser otvJuser = new OtvJuser();
         users = otvJuser.getUsers();
-        for (int x = 0;x <users.size();x++){
-            usersData.add(users.get(x));}
+        for (int x = 0; x < users.size(); x++) {
+            usersData.add(users.get(x));
+        }
         TKid.setCellValueFactory(new PropertyValueFactory<Users, Integer>("id"));
         TKname.setCellValueFactory(new PropertyValueFactory<Users, String>("name"));
         TKlastname.setCellValueFactory(new PropertyValueFactory<Users, String>("lastname"));
@@ -101,30 +102,28 @@ public class Admin {
         mapjs.put("midlename", ot.getText());
         mapjs.put("type", "1");
         Otpravka otpravka = new Otpravka();
-         otpravka.OtpReg(mapjs);
+        otpravka.OtpReg(mapjs);
         OtvJreg otvJreg = new OtvJreg();
         jregistr = otvJreg.getJreg();
         if (jregistr.getStatus() == 0) {
             Errors.regError(jregistr.getInfo().getText());
         } else {
-
-                im.setDisable(true);
-                fm.setDisable(true);
-                ot.setDisable(true);
-                logr.setDisable(true);
-                parr.setDisable(true);
-                vizobil7.setDisable(true);
-                vizobil6.setDisable(true);
-                vizobil5.setDisable(true);
-                vizobil4.setDisable(true);
-                vizobil3.setDisable(true);
-                vizobil.setDisable(false);
-                vizobil1.setDisable(false);
-                gryp.setDisable(false);
-                predmet.setDisable(false);
-                plus.setDisable(false);
-                cozdat.setDisable(true);
-
+            im.setDisable(true);
+            fm.setDisable(true);
+            ot.setDisable(true);
+            logr.setDisable(true);
+            parr.setDisable(true);
+            vizobil7.setDisable(true);
+            vizobil6.setDisable(true);
+            vizobil5.setDisable(true);
+            vizobil4.setDisable(true);
+            vizobil3.setDisable(true);
+            vizobil.setDisable(false);
+            vizobil1.setDisable(false);
+            gryp.setDisable(false);
+            predmet.setDisable(false);
+            plus.setDisable(false);
+            cozdat.setDisable(true);
         }
         System.out.println(jregistr.getInfo().getText());
     }
@@ -148,7 +147,7 @@ public class Admin {
     public void ObnovTab(Event event) {
 
 
-        }
+    }
 
     public void Obnovit(ActionEvent actionEvent) {
         im.setDisable(false);
@@ -173,6 +172,7 @@ public class Admin {
         plus.setDisable(true);
         cozdat.setDisable(false);
     }
+
     public void ObnovTb(ActionEvent actionEvent) {
     }
 }
