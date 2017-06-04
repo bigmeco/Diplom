@@ -7,10 +7,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import link.otvet.OtvJlog;
 import link.otvet.OtvJreg;
@@ -34,6 +36,7 @@ public class Admin {
     public TextField predmet;
     public TextField gryp;
     public Button cozdat;
+    public Button obnovit;
     public TextField im;
     public TextField fm;
     public TextField ot;
@@ -104,7 +107,7 @@ public class Admin {
         if (jregistr.getStatus() == 0) {
             Errors.regError(jregistr.getInfo().getText());
         } else {
-            if (!Objects.equals(cozdat.getText(), "Заполнить")) {
+
                 im.setDisable(true);
                 fm.setDisable(true);
                 ot.setDisable(true);
@@ -120,30 +123,8 @@ public class Admin {
                 gryp.setDisable(false);
                 predmet.setDisable(false);
                 plus.setDisable(false);
-                cozdat.setText("Заполнить");
-            } else {
-                cozdat.setText("Создать");
-                im.setDisable(false);
-                im.setText("");
-                fm.setDisable(false);
-                fm.setText("");
-                ot.setDisable(false);
-                ot.setText("");
-                logr.setDisable(false);
-                logr.setText("");
-                parr.setDisable(false);
-                parr.setText("");
-                vizobil7.setDisable(false);
-                vizobil6.setDisable(false);
-                vizobil5.setDisable(false);
-                vizobil4.setDisable(false);
-                vizobil3.setDisable(false);
-                vizobil.setDisable(true);
-                vizobil1.setDisable(true);
-                gryp.setDisable(true);
-                predmet.setDisable(true);
-                plus.setDisable(true);
-            }
+                cozdat.setDisable(true);
+
         }
         System.out.println(jregistr.getInfo().getText());
     }
@@ -169,5 +150,30 @@ public class Admin {
 
         }
 
+    public void Obnovit(ActionEvent actionEvent) {
+        im.setDisable(false);
+        im.setText("");
+        fm.setDisable(false);
+        fm.setText("");
+        ot.setDisable(false);
+        ot.setText("");
+        logr.setDisable(false);
+        logr.setText("");
+        parr.setDisable(false);
+        parr.setText("");
+        vizobil7.setDisable(false);
+        vizobil6.setDisable(false);
+        vizobil5.setDisable(false);
+        vizobil4.setDisable(false);
+        vizobil3.setDisable(false);
+        vizobil.setDisable(true);
+        vizobil1.setDisable(true);
+        gryp.setDisable(true);
+        predmet.setDisable(true);
+        plus.setDisable(true);
+        cozdat.setDisable(false);
     }
+    public void ObnovTb(ActionEvent actionEvent) {
+    }
+}
 
