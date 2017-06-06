@@ -3,7 +3,9 @@ package controlers;
 import POJO.Jlogin;
 import POJO.Jregistr;
 import POJO.Users;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -19,6 +21,8 @@ import link.otvet.OtvJreg;
 import link.otvet.OtvJuser;
 import link.zapros.Otpravka;
 import modul.Errors;
+import impl.org.controlsfx.skin.CheckComboBoxSkin;
+import org.controlsfx.control.CheckComboBox;
 
 import java.util.HashMap;
 import java.util.List;
@@ -47,6 +51,8 @@ public class Admin {
     public Label vizobil6;
     public TextField logr;
     public TextField parr;
+    public CheckComboBox SPpridmen;
+    public ComboBox<String>comboBox;
     @FXML
     private Label vizobil;
     @FXML
@@ -67,6 +73,7 @@ public class Admin {
     private TableColumn<Users, String> TKfestname;
     private static List<Users> users;
     private ObservableList<Users> usersData = FXCollections.observableArrayList();
+    private final ObservableList<String> strings = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
@@ -76,12 +83,19 @@ public class Admin {
         users = otvJuser.getUsers();
         for (int x = 0; x < users.size(); x++) {
             usersData.add(users.get(x));
+            strings.add(users.get(x).getName()+" "+users.get(x).getLastname() +" "+users.get(x).getMidlename());
         }
         TKid.setCellValueFactory(new PropertyValueFactory<Users, Integer>("id"));
         TKname.setCellValueFactory(new PropertyValueFactory<Users, String>("name"));
         TKlastname.setCellValueFactory(new PropertyValueFactory<Users, String>("lastname"));
         TKfestname.setCellValueFactory(new PropertyValueFactory<Users, String>("midlename"));
         TBusers.setItems(usersData);
+
+        SPpridmen.getItems().add("A");
+        SPpridmen.getCheckModel().check(0);
+
+        comboBox.setItems(strings);
+        comboBox.setOnAction(event -> System.out.println(comboBox.getValue()));
     }
 
     public void bec(ActionEvent actionEvent) throws Exception {
@@ -174,6 +188,10 @@ public class Admin {
     }
 
     public void ObnovTb(ActionEvent actionEvent) {
+
+
+
+
     }
 }
 

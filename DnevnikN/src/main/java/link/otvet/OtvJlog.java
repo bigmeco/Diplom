@@ -72,8 +72,8 @@ public class OtvJlog {
         Prepods.setScene(new Scene(root, 590, 490));
         Prepods.setResizable(false);
         Prepods.show();
-        transition = new JFXFillTransition(Duration.millis(6000), root, Color.valueOf("B3E5FC"), Color.valueOf("80CBC4"));
-        transition2 = new JFXFillTransition(Duration.millis(6000), root, Color.valueOf("80CBC4"), Color.valueOf("B3E5FC"));
+        transition = new JFXFillTransition(Duration.millis(6000), root, Color.valueOf("DCEDC8"), Color.valueOf("80CBC4"));
+        transition2 = new JFXFillTransition(Duration.millis(6000), root, Color.valueOf("80CBC4"), Color.valueOf("DCEDC8"));
         transition.setOnFinished(event -> transition2.play());
         transition2.setOnFinished(event -> transition.play());
         transition.play();

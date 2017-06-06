@@ -18,6 +18,8 @@ repositories {
 
 dependencies{
     compile 'com.jfoenix:jfoenix:1.4.0'
+// https://mvnrepository.com/artifact/org.controlsfx/controlsfx
+    compile group: 'org.controlsfx', name: 'controlsfx', version: '8.40.12'
 
     compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.6.0'
 // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
