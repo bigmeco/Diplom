@@ -346,7 +346,12 @@
                                                    </LinearGradient>
                                                 </textFill>
                                              </Label>
-                                             <TextField layoutX="16.0" layoutY="112.0" prefHeight="25.0" prefWidth="265.0" />
+                                             <TextField fx:id="NazvanP" layoutX="16.0" layoutY="112.0" prefHeight="25.0" prefWidth="265.0" />
+                                             <JFXButton blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" layoutX="16.0" layoutY="354.0" onAction="#DobavPred" prefHeight="60.0" prefWidth="265.0" ripplerFill="#800000" text="+">
+                                                <font>
+                                                   <Font size="32.0" />
+                                                </font>
+                                             </JFXButton>
                                           </children>
                                        </AnchorPane>
                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -431,6 +436,11 @@
                                              </Label>
                                              <TextField layoutX="13.0" layoutY="189.0" prefHeight="25.0" prefWidth="265.0" />
                                              <CheckComboBox fx:id="SPpridmen" layoutX="13.0" layoutY="270.0" prefHeight="25.0" prefWidth="265.0" />
+                                             <JFXButton blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" layoutX="16.0" layoutY="354.0" onAction="#DobavGryp" prefHeight="60.0" prefWidth="265.0" ripplerFill="#008024" text="+">
+                                                <font>
+                                                   <Font size="32.0" />
+                                                </font>
+                                             </JFXButton>
                                           </children>
                                        </AnchorPane>
                                    </items>

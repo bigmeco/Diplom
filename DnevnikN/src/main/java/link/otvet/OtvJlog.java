@@ -77,6 +77,7 @@ public class OtvJlog {
         transition.setOnFinished(event -> transition2.play());
         transition2.setOnFinished(event -> transition.play());
         transition.play();
+        System.out.println(jloginO.getToken());
     }
     public Jlogin getJlogin() {
         System.out.println(jloginO.getToken());

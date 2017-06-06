@@ -33,5 +33,9 @@ public interface Retrofit_int {
 
     @GET("dnevnik/users?type=1")
     Observable<List<Users>> getUser();
+
+    @FormUrlEncoded
+    @POST("dnevnik/addpredmet")
+    Observable<Jgrup> getPredmet(@Field("token") String token,@Field("prepod") String prepod,@Field("predmet") String predmet);
 }
 

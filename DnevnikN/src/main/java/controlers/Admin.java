@@ -12,6 +12,7 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -44,6 +45,7 @@ public class Admin {
     public TextField im;
     public TextField fm;
     public TextField ot;
+    public TextField NazvanP;
     public Label vizobil4;
     public Label vizobil5;
     public Label vizobil3;
@@ -52,7 +54,7 @@ public class Admin {
     public TextField logr;
     public TextField parr;
     public CheckComboBox SPpridmen;
-    public ComboBox<String>comboBox;
+    public ComboBox<String> comboBox;
     @FXML
     private Label vizobil;
     @FXML
@@ -75,6 +77,8 @@ public class Admin {
     private ObservableList<Users> usersData = FXCollections.observableArrayList();
     private final ObservableList<String> strings = FXCollections.observableArrayList();
 
+    private int id;
+
     @FXML
     public void initialize() {
         Otpravka otpravka = new Otpravka();
@@ -83,7 +87,7 @@ public class Admin {
         users = otvJuser.getUsers();
         for (int x = 0; x < users.size(); x++) {
             usersData.add(users.get(x));
-            strings.add(users.get(x).getName()+" "+users.get(x).getLastname() +" "+users.get(x).getMidlename());
+            strings.add(users.get(x).getName() + " " + users.get(x).getLastname() + " " + users.get(x).getMidlename());
         }
         TKid.setCellValueFactory(new PropertyValueFactory<Users, Integer>("id"));
         TKname.setCellValueFactory(new PropertyValueFactory<Users, String>("name"));
@@ -91,11 +95,20 @@ public class Admin {
         TKfestname.setCellValueFactory(new PropertyValueFactory<Users, String>("midlename"));
         TBusers.setItems(usersData);
 
-        SPpridmen.getItems().add("A");
+        SPpridmen.getItems().addAll(strings);
         SPpridmen.getCheckModel().check(0);
-
         comboBox.setItems(strings);
-        comboBox.setOnAction(event -> System.out.println(comboBox.getValue()));
+
+        comboBox.setOnAction(event -> {
+            for (int x = 0; x < users.size(); x++) {
+                String d = users.get(x).getName() + " " + users.get(x).getLastname() + " " + users.get(x).getMidlename();
+                if (Objects.equals(d, comboBox.getValue())) {
+                    id = users.get(x).getId();
+                    break;
+                }
+            }
+            comboBox.getValue();
+        });
     }
 
     public void bec(ActionEvent actionEvent) throws Exception {
@@ -190,6 +203,16 @@ public class Admin {
     public void ObnovTb(ActionEvent actionEvent) {
 
 
+    }
+
+    public void DobavPred(ActionEvent actionEvent) {
+        Otpravka otpravka = new Otpravka();
+        OtvJlog otvJlog = new OtvJlog();
+        jlogin = otvJlog.getJlogin();
+        otpravka.OtpPredmet(jlogin.getToken(), String.valueOf(id), NazvanP.getText());
+    }
+
+    public void DobavGryp(ActionEvent actionEvent) {
 
 
     }

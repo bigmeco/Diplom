@@ -39,4 +39,10 @@ public class Otpravka implements Otprav_int {
         call.getUser()
                 .subscribe(s -> OtvJuser.setUsers(s));
     }
+
+    @Override
+    public void OtpPredmet(String token,String prepod,String predmet) {
+        call.getPredmet(token,prepod,predmet)
+                .subscribe(s -> OtvJgrup.setJgrup(s));
+    }
 }

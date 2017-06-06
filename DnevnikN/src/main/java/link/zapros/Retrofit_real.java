@@ -48,6 +48,14 @@ public class Retrofit_real implements Retrofit_int {
         return service.getUser();
     }
 
+    @Override
+    public Observable<Jgrup> getPredmet(String token, String prepod, String predmet) {
+        Retrofit_int service = getRetrofit().create(Retrofit_int.class);
+        return service.getPredmet(token,prepod,predmet);
+    }
+
+
+
 
     public static Retrofit getRetrofit() {
         return new Retrofit.Builder()
