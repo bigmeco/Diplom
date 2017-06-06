@@ -170,7 +170,6 @@
                                                 </panes>
                                             </Accordion>
                                             <TextField fx:id="gryp" disable="true" layoutX="15.0" layoutY="109.0" prefHeight="25.0" prefWidth="124.0" />
-                                            <TextField fx:id="predmet" disable="true" layoutX="220.0" layoutY="109.0" prefHeight="25.0" prefWidth="243.0" />
                                             <Label fx:id="vizobil3" layoutX="15.0" layoutY="14.0" text="Имя" textAlignment="CENTER">
                                                 <font>
                                                     <Font size="18.0" />
@@ -241,6 +240,7 @@
                                        <Font size="28.0" />
                                     </font>
                                  </JFXButton>
+                                 <CheckComboBox fx:id="predmet" disable="true" layoutX="220.0" layoutY="109.0" prefHeight="25.0" prefWidth="244.0" />
                                         </children>
                                     </Pane>
                                 </children>

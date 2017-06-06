@@ -36,7 +36,7 @@ public class Admin {
     private static Jregistr jregistr;
     @FXML
     public Label vizobil1;
-    public TextField predmet;
+    public CheckComboBox predmet;
     public TextField gryp;
     public Button cozdat;
     public Button obnovit;
@@ -104,6 +104,7 @@ public class Admin {
         TBusers.setItems(usersData);
 
         SPpridmen.getItems().addAll(predmetlist);
+        predmet.getItems().addAll(predmetlist);
 
         comboBox.setItems(strings);
         comboBox1.setItems(strings);
@@ -170,15 +171,22 @@ public class Admin {
         if (jregistr.getStatus() == 0) {
             Errors.regError(jregistr.getInfo().getText());
         } else {
+            StringBuffer strBuffer = new StringBuffer();
+            List f = predmet.getCheckModel().getCheckedItems();
+            for (int x = 0; x < predmetlist.size(); x++) {
+                int finalX = x;
+                predmetis.stream()
+                        .filter(s -> f.get(finalX) == s.getPredmet())
+                        .forEach(s -> strBuffer.append(s.getId() + ","));
+            }
             HashMap mapjs = new HashMap();
             mapjs.put("token", jlogin.getToken());
             mapjs.put("prepod", jregistr.getInfo().getId());
             mapjs.put("gruppa", gryp.getText());
-            mapjs.put("predmeti", predmet.getText());
+            mapjs.put("predmeti", strBuffer.toString());
             Otpravka otpravka = new Otpravka();
             otpravka.OtpGrup(mapjs);
             gryp.setText("");
-            predmet.setText("");
         }
     }
 
