@@ -1,9 +1,6 @@
 package link.zapros;
 
-import POJO.Jgrup;
-import POJO.Jlogin;
-import POJO.Jregistr;
-import POJO.Users;
+import POJO.*;
 import io.reactivex.Observable;
 import retrofit2.http.*;
 
@@ -36,6 +33,9 @@ public interface Retrofit_int {
 
     @FormUrlEncoded
     @POST("dnevnik/addpredmet")
-    Observable<Jgrup> getPredmet(@Field("token") String token,@Field("prepod") String prepod,@Field("predmet") String predmet);
+    Observable<Jgrup> getAddPredmet(@Field("token") String token, @Field("prepod") String prepod, @Field("predmet") String predmet);
+
+    @GET("dnevnik/predmeti")
+    Observable<List<Predmeti>> getPredmet();
 }
 

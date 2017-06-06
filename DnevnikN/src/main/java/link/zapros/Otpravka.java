@@ -1,9 +1,6 @@
 package link.zapros;
 
-import link.otvet.OtvJgrup;
-import link.otvet.OtvJlog;
-import link.otvet.OtvJreg;
-import link.otvet.OtvJuser;
+import link.otvet.*;
 
 import java.util.Map;
 
@@ -41,8 +38,14 @@ public class Otpravka implements Otprav_int {
     }
 
     @Override
-    public void OtpPredmet(String token,String prepod,String predmet) {
-        call.getPredmet(token,prepod,predmet)
+    public void OtpAddPredmet(String token,String prepod,String predmet) {
+        call.getAddPredmet(token,prepod,predmet)
                 .subscribe(s -> OtvJgrup.setJgrup(s));
+    }
+
+    @Override
+    public void OtpPredmet() {
+        call.getPredmet()
+                .subscribe(s -> OtvJpredmet.setPredmetis(s));
     }
 }

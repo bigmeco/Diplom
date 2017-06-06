@@ -15,5 +15,7 @@ public interface Otprav_int {
 
     void OtpUser();
 
-    void OtpPredmet(String token,String prepod,String predmet);
+    void OtpAddPredmet(String token,String prepod,String predmet);
+
+    void OtpPredmet();
 }

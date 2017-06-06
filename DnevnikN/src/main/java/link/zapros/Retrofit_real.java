@@ -1,9 +1,6 @@
 package link.zapros;
 
-import POJO.Jgrup;
-import POJO.Jlogin;
-import POJO.Jregistr;
-import POJO.Users;
+import POJO.*;
 import io.reactivex.Observable;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -49,12 +46,16 @@ public class Retrofit_real implements Retrofit_int {
     }
 
     @Override
-    public Observable<Jgrup> getPredmet(String token, String prepod, String predmet) {
+    public Observable<Jgrup> getAddPredmet(String token, String prepod, String predmet) {
         Retrofit_int service = getRetrofit().create(Retrofit_int.class);
-        return service.getPredmet(token,prepod,predmet);
+        return service.getAddPredmet(token,prepod,predmet);
     }
 
-
+    @Override
+    public Observable<List<Predmeti>> getPredmet() {
+        Retrofit_int service = getRetrofit().create(Retrofit_int.class);
+        return service.getPredmet();
+    }
 
 
     public static Retrofit getRetrofit() {

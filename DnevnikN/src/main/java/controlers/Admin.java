@@ -2,32 +2,30 @@ package controlers;
 
 import POJO.Jlogin;
 import POJO.Jregistr;
+import POJO.Predmeti;
 import POJO.Users;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import link.otvet.OtvJlog;
+import link.otvet.OtvJpredmet;
 import link.otvet.OtvJreg;
 import link.otvet.OtvJuser;
 import link.zapros.Otpravka;
 import modul.Errors;
-import impl.org.controlsfx.skin.CheckComboBoxSkin;
 import org.controlsfx.control.CheckComboBox;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Stream;
 
 /**
  * Created by bigme on 03.06.2017.
@@ -46,6 +44,7 @@ public class Admin {
     public TextField fm;
     public TextField ot;
     public TextField NazvanP;
+    public TextField NomerGr;
     public Label vizobil4;
     public Label vizobil5;
     public Label vizobil3;
@@ -75,8 +74,10 @@ public class Admin {
     @FXML
     private TableColumn<Users, String> TKfestname;
     private static List<Users> users;
+    private static List<Predmeti> predmetis;
     private ObservableList<Users> usersData = FXCollections.observableArrayList();
     private final ObservableList<String> strings = FXCollections.observableArrayList();
+    private final ObservableList<String> predmetlist = FXCollections.observableArrayList();
 
     private int id;
 
@@ -84,11 +85,17 @@ public class Admin {
     public void initialize() {
         Otpravka otpravka = new Otpravka();
         otpravka.OtpUser();
+        otpravka.OtpPredmet();
+        OtvJpredmet otvJpredmet = new OtvJpredmet();
+        predmetis = otvJpredmet.getPredmetis();
         OtvJuser otvJuser = new OtvJuser();
         users = otvJuser.getUsers();
         for (int x = 0; x < users.size(); x++) {
             usersData.add(users.get(x));
             strings.add(users.get(x).getName() + " " + users.get(x).getLastname() + " " + users.get(x).getMidlename());
+        }
+        for (int x = 0; x < predmetis.size(); x++) {
+            predmetlist.add(predmetis.get(x).getPredmet());
         }
         TKid.setCellValueFactory(new PropertyValueFactory<>("id"));
         TKname.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -96,8 +103,8 @@ public class Admin {
         TKfestname.setCellValueFactory(new PropertyValueFactory<>("midlename"));
         TBusers.setItems(usersData);
 
-        SPpridmen.getItems().addAll(strings);
-        SPpridmen.getCheckModel().check(0);
+        SPpridmen.getItems().addAll(predmetlist);
+
         comboBox.setItems(strings);
         comboBox1.setItems(strings);
         comboBox.setOnAction(event -> OpredPrep(comboBox.getValue()));
@@ -213,11 +220,21 @@ public class Admin {
         Otpravka otpravka = new Otpravka();
         OtvJlog otvJlog = new OtvJlog();
         jlogin = otvJlog.getJlogin();
-        otpravka.OtpPredmet(jlogin.getToken(), String.valueOf(id), NazvanP.getText());
+        otpravka.OtpAddPredmet(jlogin.getToken(), String.valueOf(id), NazvanP.getText());
     }
 
     public void DobavGryp(ActionEvent actionEvent) {
 
+
+        StringBuffer strBuffer = new StringBuffer();
+        List f = SPpridmen.getCheckModel().getCheckedItems();
+        for (int x = 0; x < predmetlist.size(); x++) {
+            int finalX = x;
+            predmetis.stream()
+                    .filter(s-> f.get(finalX) == s.getPredmet())
+                    .forEach(s->strBuffer.append(s.getId()+","));
+        }
+        System.out.println(strBuffer.toString());
 
     }
 }
