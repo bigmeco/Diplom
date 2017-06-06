@@ -415,7 +415,7 @@
                                                 </textFill>
                                              </Label>
                                              <TextField layoutX="13.0" layoutY="105.0" prefHeight="25.0" prefWidth="265.0" />
-                                             <Label fx:id="vizobil3121" layoutX="7.0" layoutY="150.0" text="Идентификатор преподователя" textAlignment="CENTER">
+                                             <Label fx:id="vizobil3121" layoutX="16.0" layoutY="150.0" text="Преподователь" textAlignment="CENTER">
                                                 <font>
                                                    <Font size="18.0" />
                                                 </font>
@@ -434,13 +434,13 @@
                                                    </LinearGradient>
                                                 </textFill>
                                              </Label>
-                                             <TextField layoutX="13.0" layoutY="189.0" prefHeight="25.0" prefWidth="265.0" />
                                              <CheckComboBox fx:id="SPpridmen" layoutX="13.0" layoutY="270.0" prefHeight="25.0" prefWidth="265.0" />
                                              <JFXButton blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" layoutX="16.0" layoutY="354.0" onAction="#DobavGryp" prefHeight="60.0" prefWidth="265.0" ripplerFill="#008024" text="+">
                                                 <font>
                                                    <Font size="32.0" />
                                                 </font>
                                              </JFXButton>
+                                             <ComboBox fx:id="comboBox1" layoutX="11.0" layoutY="189.0" prefHeight="25.0" prefWidth="269.0" />
                                           </children>
                                        </AnchorPane>
                                    </items>

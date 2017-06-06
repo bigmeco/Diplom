@@ -55,6 +55,7 @@ public class Admin {
     public TextField parr;
     public CheckComboBox SPpridmen;
     public ComboBox<String> comboBox;
+    public ComboBox<String> comboBox1;
     @FXML
     private Label vizobil;
     @FXML
@@ -89,27 +90,30 @@ public class Admin {
             usersData.add(users.get(x));
             strings.add(users.get(x).getName() + " " + users.get(x).getLastname() + " " + users.get(x).getMidlename());
         }
-        TKid.setCellValueFactory(new PropertyValueFactory<Users, Integer>("id"));
-        TKname.setCellValueFactory(new PropertyValueFactory<Users, String>("name"));
-        TKlastname.setCellValueFactory(new PropertyValueFactory<Users, String>("lastname"));
-        TKfestname.setCellValueFactory(new PropertyValueFactory<Users, String>("midlename"));
+        TKid.setCellValueFactory(new PropertyValueFactory<>("id"));
+        TKname.setCellValueFactory(new PropertyValueFactory<>("name"));
+        TKlastname.setCellValueFactory(new PropertyValueFactory<>("lastname"));
+        TKfestname.setCellValueFactory(new PropertyValueFactory<>("midlename"));
         TBusers.setItems(usersData);
 
         SPpridmen.getItems().addAll(strings);
         SPpridmen.getCheckModel().check(0);
         comboBox.setItems(strings);
-
-        comboBox.setOnAction(event -> {
-            for (int x = 0; x < users.size(); x++) {
-                String d = users.get(x).getName() + " " + users.get(x).getLastname() + " " + users.get(x).getMidlename();
-                if (Objects.equals(d, comboBox.getValue())) {
-                    id = users.get(x).getId();
-                    break;
-                }
-            }
-            comboBox.getValue();
-        });
+        comboBox1.setItems(strings);
+        comboBox.setOnAction(event -> OpredPrep(comboBox.getValue()));
+        comboBox1.setOnAction(event -> OpredPrep(comboBox1.getValue()));
     }
+
+    private void OpredPrep(String g) {
+        for (int x = 0; x < users.size(); x++) {
+            String d = users.get(x).getName() + " " + users.get(x).getLastname() + " " + users.get(x).getMidlename();
+            if (Objects.equals(d, g)) {
+                id = users.get(x).getId();
+                break;
+            }
+        }
+    }
+
 
     public void bec(ActionEvent actionEvent) throws Exception {
         Node source = (Node) actionEvent.getSource();
