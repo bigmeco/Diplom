@@ -224,18 +224,23 @@ public class Admin {
     }
 
     public void DobavGryp(ActionEvent actionEvent) {
-
-
+        Otpravka otpravka = new Otpravka();
+        OtvJlog otvJlog = new OtvJlog();
+        jlogin = otvJlog.getJlogin();
         StringBuffer strBuffer = new StringBuffer();
         List f = SPpridmen.getCheckModel().getCheckedItems();
         for (int x = 0; x < predmetlist.size(); x++) {
             int finalX = x;
             predmetis.stream()
-                    .filter(s-> f.get(finalX) == s.getPredmet())
-                    .forEach(s->strBuffer.append(s.getId()+","));
+                    .filter(s -> f.get(finalX) == s.getPredmet())
+                    .forEach(s -> strBuffer.append(s.getId() + ","));
         }
-        System.out.println(strBuffer.toString());
-
+        HashMap mapjs = new HashMap();
+        mapjs.put("token", jlogin.getToken());
+        mapjs.put("prepod", String.valueOf(id));
+        mapjs.put("gruppa", NomerGr.getText());
+        mapjs.put("predmeti", strBuffer.toString());
+        otpravka.OtpGrup(mapjs);
     }
 }
 

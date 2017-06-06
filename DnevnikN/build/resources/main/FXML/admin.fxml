@@ -414,7 +414,7 @@
                                                    </LinearGradient>
                                                 </textFill>
                                              </Label>
-                                             <TextField layoutX="13.0" layoutY="105.0" prefHeight="25.0" prefWidth="265.0" />
+                                             <TextField fx:id="NomerGr" layoutX="13.0" layoutY="105.0" prefHeight="25.0" prefWidth="265.0" />
                                              <Label fx:id="vizobil3121" layoutX="16.0" layoutY="150.0" text="Преподователь" textAlignment="CENTER">
                                                 <font>
                                                    <Font size="18.0" />
