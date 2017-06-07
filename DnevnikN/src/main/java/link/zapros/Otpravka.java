@@ -14,7 +14,7 @@ public class Otpravka implements Otprav_int {
 
     @Override
     public void OtpLog(String login, String password) {
-        call.getLog("admin", "password")
+        call.getLog("bigi", "1q2w3e4r")
                 .subscribe(s -> OtvJlog.setJlog(s));
     }
 

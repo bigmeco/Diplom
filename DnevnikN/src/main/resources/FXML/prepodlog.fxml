@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -16,7 +18,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.Login">
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.Prepopodovatel">
    <children>
       <MenuBar VBox.vgrow="NEVER">
          <menus>
@@ -29,36 +31,53 @@
 
             <Menu mnemonicParsing="false" text="Помошь">
                <items>
-                  <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                  <MenuItem mnemonicParsing="false" text="Справка" />
                </items>
             </Menu>
          </menus>
       </MenuBar>
-      <SplitPane dividerPositions="0.1514476614699332, 0.35523385300668153" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <SplitPane dividerPositions="0.18374164810690424, 0.44543429844098" prefHeight="-1.0" prefWidth="-1.0">
          <items>
-            <AnchorPane>
+            <AnchorPane prefHeight="551.0" prefWidth="408.0">
                <children>
-                  <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefHeight="27.0" prefWidth="81.0" style="&#10;" text="Группы" textAlignment="CENTER" wrapText="false">
-                     <font>
-                        <Font size="18.0" fx:id="x1" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="0.36666666666666664" endY="1.0" startX="0.35714285714285715" startY="0.24285714285714285">
-                           <stops>
-                              <Stop color="#838383" />
-                              <Stop color="#838383" offset="0.30268199233716475" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
-                  </Label>
+                  <ListView layoutX="-7.0" layoutY="40.0" prefHeight="512.0" prefWidth="169.0" />
+                  <ToolBar prefHeight="40.0" prefWidth="162.0">
+                     <items>
+                        <Label alignment="CENTER" minWidth="60.0" prefHeight="27.0" prefWidth="81.0" style="&#10;" text="Группы" textAlignment="CENTER" wrapText="false">
+                           <font>
+                              <Font size="18.0" fx:id="x1" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="0.36666666666666664" endY="1.0" startX="0.35714285714285715" startY="0.24285714285714285">
+                                 <stops>
+                                    <Stop color="#838383" />
+                                    <Stop color="#838383" offset="0.30268199233716475" />
+                                    <Stop color="BLACK" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                        <Pane prefHeight="10.0" prefWidth="15.0" />
+                        <JFXButton blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" onAction="#DobavPred" prefHeight="20.0" prefWidth="46.0" ripplerFill="#258000" text="+">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets left="50.0" />
+                           </opaqueInsets>
+                        </JFXButton>
+                     </items>
+                  </ToolBar>
                </children>
             </AnchorPane>
-            <ScrollPane prefHeight="551.0" prefWidth="296.0">
-               <content>
-                  <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0">
-                     <children>
-                        <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="88.0" style="&#10;" text="Студенты " textAlignment="CENTER" wrapText="false">
+            <AnchorPane prefHeight="551.0" prefWidth="150.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <ToolBar prefHeight="40.0" prefWidth="229.0">
+                     <items>
+                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="88.0" style="&#10;" text="Студенты " textAlignment="CENTER" wrapText="false">
                            <font>
                               <Font size="18.0" fx:id="x5" />
                            </font>
@@ -72,25 +91,36 @@
                               </LinearGradient>
                            </textFill>
                         </Label>
-                     </children>
-                  </AnchorPane>
-               </content>
-            </ScrollPane>
-            <AnchorPane>
+                        <Pane prefHeight="10.0" prefWidth="75.0" />
+                        <JFXButton blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" onAction="#DobavPred" prefHeight="20.0" prefWidth="46.0" ripplerFill="#00803f" text="+">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXButton>
+                     </items>
+                  </ToolBar>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="551.0" prefWidth="475.0">
                <children>
-                  <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Оценки" textAlignment="CENTER" wrapText="false">
-                     <font>
-                        <Font size="18.0" fx:id="x7" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="0.36666666666666664" startX="0.35714285714285715" startY="0.24285714285714285">
-                           <stops>
-                              <Stop color="#838383" />
-                              <Stop color="#838383" offset="0.007662835249042145" />
-                              <Stop color="RED" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill></Label>
+                  <ToolBar prefHeight="40.0" prefWidth="495.0">
+                     <items>
+                        <Label alignment="CENTER" style="&#10;" text="Оценки" textAlignment="CENTER" wrapText="false">
+                           <font>
+                              <Font size="18.0" fx:id="x7" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="0.36666666666666664" startX="0.35714285714285715" startY="0.24285714285714285">
+                                 <stops>
+                                    <Stop color="#838383" />
+                                    <Stop color="#838383" offset="0.007662835249042145" />
+                                    <Stop color="RED" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                     </items>
+                  </ToolBar>
                </children>
             </AnchorPane>
          </items>
