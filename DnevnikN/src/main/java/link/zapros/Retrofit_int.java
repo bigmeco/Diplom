@@ -37,5 +37,9 @@ public interface Retrofit_int {
 
     @GET("dnevnik/predmeti")
     Observable<List<Predmeti>> getPredmet();
+
+    @GET("dnevnik/groups?")
+    Observable<List<Groups>> getGroups();
+
 }
 

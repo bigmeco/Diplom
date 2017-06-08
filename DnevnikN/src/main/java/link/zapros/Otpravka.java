@@ -48,4 +48,12 @@ public class Otpravka implements Otprav_int {
         call.getPredmet()
                 .subscribe(s -> OtvJpredmet.setPredmetis(s));
     }
+
+    @Override
+    public void OtpGroups() {
+        call.getGroups()
+                .subscribe(s -> OtvJgrups.setGroups(s));
+    }
+
+
 }

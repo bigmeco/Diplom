@@ -59,7 +59,7 @@ public class OtvJlog {
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/prepodlog.fxml"));
         Prepods.setMinHeight(600);
         Prepods.setMinWidth(900);
-        Prepods.setScene(new Scene(root, 900, 600));
+        Prepods.setScene(new Scene(root, 890, 600));
         Prepods.setResizable(false);
         Prepods.show();
     }

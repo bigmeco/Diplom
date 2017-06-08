@@ -23,7 +23,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.CheckComboBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.Admin">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.Admin">
     <opaqueInsets>
         <Insets />
     </opaqueInsets>
@@ -356,7 +356,7 @@
                                        </AnchorPane>
                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                           <children>
-                                                        <Label layoutX="61.0" layoutY="14.0" text="Добавление группу" textAlignment="CENTER">
+                                                        <Label layoutX="71.0" layoutY="14.0" text="Добавление групп" textAlignment="CENTER">
                                                             <font>
                                                                 <Font size="18.0" />
                                                             </font>

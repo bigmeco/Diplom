@@ -57,6 +57,12 @@ public class Retrofit_real implements Retrofit_int {
         return service.getPredmet();
     }
 
+    @Override
+    public Observable<List<Groups>> getGroups() {
+        Retrofit_int service = getRetrofit().create(Retrofit_int.class);
+        return service.getGroups();
+    }
+
 
     public static Retrofit getRetrofit() {
         return new Retrofit.Builder()

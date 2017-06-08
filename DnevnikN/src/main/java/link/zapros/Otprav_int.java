@@ -18,4 +18,6 @@ public interface Otprav_int {
     void OtpAddPredmet(String token,String prepod,String predmet);
 
     void OtpPredmet();
+
+    void OtpGroups();
 }
