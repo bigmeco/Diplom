@@ -28,8 +28,8 @@ public interface Retrofit_int {
     Observable<Jgrup> getGrup(@FieldMap Map<String, String> map);
 
 
-    @GET("dnevnik/users?type=1")
-    Observable<List<Users>> getUser();
+    @GET("dnevnik/users?")
+    Observable<List<Users>> getUser(@Query("type") String type,@Query("gruppa") String gruppa);
 
     @FormUrlEncoded
     @POST("dnevnik/addpredmet")
@@ -40,6 +40,13 @@ public interface Retrofit_int {
 
     @GET("dnevnik/groups?")
     Observable<List<Groups>> getGroups();
+
+    @FormUrlEncoded
+    @POST("dnevnik/addocenky")
+    Observable<Jgrup> getAddOcenki(@FieldMap Map<String, String> map);
+
+    @GET("dnevnik/ocenki")
+    Observable<List<Ocenka>> getOcenki(@Query("predmet") String predmet,@Query("student") String student);
 
 }
 

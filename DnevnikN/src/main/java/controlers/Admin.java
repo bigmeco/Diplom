@@ -84,7 +84,7 @@ public class Admin {
     @FXML
     public void initialize() {
         Otpravka otpravka = new Otpravka();
-        otpravka.OtpUser();
+        otpravka.OtpUser("1","null");
         otpravka.OtpPredmet();
         OtvJpredmet otvJpredmet = new OtvJpredmet();
         predmetis = otvJpredmet.getPredmetis();

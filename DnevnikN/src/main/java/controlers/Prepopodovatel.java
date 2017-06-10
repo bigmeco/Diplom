@@ -31,40 +31,43 @@ public class Prepopodovatel {
     private ListView<String> Gruppi;
     @FXML
     private ListView<String> Predmeti;
+    @FXML
+    private ListView<String> studenti;
     private static List<Groups> groups;
     private static List<Users> users;
-    private static List<POJO.Predmeti> predmetis;
+    private static List<Predmeti> predmetis;
 
     @FXML
     public void initialize() {
         Otpravka otpravka = new Otpravka();
         otpravka.OtpGroups();
-        otpravka.OtpUser();
         otpravka.OtpPredmet();
         OtvJgrups otvJgrups = new OtvJgrups();
         groups = otvJgrups.getGroups();
-        OtvJuser otvJuser = new OtvJuser();
-        users = otvJuser.getUsers();
+
         OtvJpredmet otvJpredmet = new OtvJpredmet();
         predmetis = otvJpredmet.getPredmetis();
         ObservableList<String> gruppData = FXCollections.observableArrayList();
+        ObservableList<String> studentiData = FXCollections.observableArrayList();
         ObservableList<String> PredmetiData = FXCollections.observableArrayList();
+
         for (int x = 0; x < groups.size(); x++) {
             gruppData.add(groups.get(x).getGruppa());
         }
 
 
         Gruppi.setItems(gruppData);
-        Gruppi.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> {
+        Gruppi.getSelectionModel().selectedItemProperty()
+                .addListener((observable, oldValue, newValue) -> {
                     Predmeti.getItems().clear();
+                    otpravka.OtpUser("2", "null");
+                    OtvJuser otvJuser = new OtvJuser();
+                    users = otvJuser.getUsers();
                     String[] f = new String[0];
-                    List<String> C;
                     for (int x = 0; x < groups.size(); x++) {
                         if (Objects.equals(newValue, groups.get(x).getGruppa())) {
                             f = groups.get(x).getPredmeti().trim().split(",");
                         }
-
                     }
                     for (int t = 0; t < f.length; t++) {
 
@@ -76,6 +79,21 @@ public class Prepopodovatel {
                     }
                     Predmeti.setItems(PredmetiData);
 
+                    Predmeti.getSelectionModel().selectedItemProperty()
+                            .addListener((observableP, oldValueP, newValueP) -> {
+                                studenti.getItems().clear();
+
+                                for (int x = 0; x < users.size(); x++) {
+                                    studentiData.add(users.get(x).getName() + " " + users.get(x).getLastname() + " " + users.get(x).getMidlename());
+                                }
+                                studenti.setItems(studentiData);
+                                studenti.getSelectionModel().selectedItemProperty()
+                                        .addListener((observableS, oldValueS, newValueS) -> {
+
+
+                                        });
+
+                            });
                 });
 
     }
@@ -88,6 +106,7 @@ public class Prepopodovatel {
 
 
     }
+
 
     public void DobavStud(ActionEvent actionEvent) {
 

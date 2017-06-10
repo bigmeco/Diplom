@@ -40,9 +40,9 @@ public class Retrofit_real implements Retrofit_int {
     }
 
     @Override
-    public Observable<List<Users>> getUser() {
+    public Observable<List<Users>> getUser(String type,String gruppa) {
         Retrofit_int service = getRetrofit().create(Retrofit_int.class);
-        return service.getUser();
+        return service.getUser(type,gruppa);
     }
 
     @Override
@@ -61,6 +61,18 @@ public class Retrofit_real implements Retrofit_int {
     public Observable<List<Groups>> getGroups() {
         Retrofit_int service = getRetrofit().create(Retrofit_int.class);
         return service.getGroups();
+    }
+
+    @Override
+    public Observable<Jgrup> getAddOcenki(Map<String, String> map) {
+        Retrofit_int service = getRetrofit().create(Retrofit_int.class);
+        return service.getAddOcenki(map);
+    }
+
+    @Override
+    public Observable<List<Ocenka>> getOcenki(String predmet, String student) {
+        Retrofit_int service = getRetrofit().create(Retrofit_int.class);
+        return service.getOcenki(predmet,student);
     }
 
 

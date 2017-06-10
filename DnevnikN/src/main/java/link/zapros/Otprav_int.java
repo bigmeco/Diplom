@@ -13,7 +13,7 @@ public interface Otprav_int {
 
     void OtpGrup(Map<String, String> map);
 
-    void OtpUser();
+    void OtpUser(String type,String gruppa);
 
     void OtpAddPredmet(String token,String prepod,String predmet);
 
