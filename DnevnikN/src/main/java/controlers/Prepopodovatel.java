@@ -19,6 +19,7 @@ import link.otvet.OtvJuser;
 import link.zapros.Otpravka;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 /**
@@ -31,7 +32,7 @@ public class Prepopodovatel {
     @FXML
     private ListView<String> Predmeti;
     private static List<Groups> groups;
-     private static List<Users> users;
+    private static List<Users> users;
     private static List<POJO.Predmeti> predmetis;
 
     @FXML
@@ -53,24 +54,26 @@ public class Prepopodovatel {
         }
 
 
-
         Gruppi.setItems(gruppData);
         Gruppi.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> {
+                    Predmeti.getItems().clear();
                     String[] f = new String[0];
+                    List<String> C;
                     for (int x = 0; x < groups.size(); x++) {
-                        if (newValue == groups.get(x).getGruppa()) {
+                        if (Objects.equals(newValue, groups.get(x).getGruppa())) {
                             f = groups.get(x).getPredmeti().trim().split(",");
                         }
-                        System.out.println(f[x]);
+
                     }
+                    for (int t = 0; t < f.length; t++) {
 
-                    for (int x = 0; x < predmetis.size(); x++) {
-                       //if(){
-                        PredmetiData.add(predmetis.get(x).getPredmet());
-
-                       }
-                   // }
+                        for (int x = 0; x < predmetis.size(); x++) {
+                            if (Objects.equals(f[t], predmetis.get(x).getId())) {
+                                PredmetiData.add(predmetis.get(x).getPredmet());
+                            }
+                        }
+                    }
                     Predmeti.setItems(PredmetiData);
 
                 });
