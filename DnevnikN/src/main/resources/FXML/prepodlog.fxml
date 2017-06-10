@@ -77,7 +77,7 @@
                <children>
                   <ToolBar prefHeight="40.0" prefWidth="229.0">
                      <items>
-                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="88.0" style="&#10;" text="Студенты " textAlignment="CENTER" wrapText="false">
+                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="88.0" style="&#10;" text="Предметы" textAlignment="CENTER" wrapText="false">
                            <font>
                               <Font size="18.0" fx:id="x5" />
                            </font>
@@ -99,6 +99,7 @@
                         </JFXButton>
                      </items>
                   </ToolBar>
+                  <ListView fx:id="Predmeti" layoutY="40.0" prefHeight="512.0" prefWidth="229.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="551.0" prefWidth="475.0">
