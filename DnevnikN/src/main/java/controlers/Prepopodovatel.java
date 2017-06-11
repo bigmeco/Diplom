@@ -1,6 +1,7 @@
 package controlers;
 
 import POJO.Groups;
+import POJO.Ocenka;
 import POJO.Predmeti;
 import POJO.Users;
 import javafx.beans.value.ChangeListener;
@@ -11,13 +12,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import link.otvet.OtvJgrups;
+import link.otvet.OtvJocenk;
 import link.otvet.OtvJpredmet;
 import link.otvet.OtvJuser;
 import link.zapros.Otpravka;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
@@ -35,7 +42,17 @@ public class Prepopodovatel {
     private ListView<String> studenti;
     private static List<Groups> groups;
     private static List<Users> users;
+    private static List<Ocenka> ocenkas;
     private static List<Predmeti> predmetis;
+
+    @FXML
+    private TableView<Ocenka> TableOcen;
+
+    @FXML
+    private TableColumn<Ocenka, String> TbData;
+
+    @FXML
+    private TableColumn<Ocenka, String> TbOsenk;
 
     @FXML
     public void initialize() {
@@ -47,10 +64,12 @@ public class Prepopodovatel {
 
         OtvJpredmet otvJpredmet = new OtvJpredmet();
         predmetis = otvJpredmet.getPredmetis();
+        ObservableList<Ocenka> usersData = FXCollections.observableArrayList();
         ObservableList<String> gruppData = FXCollections.observableArrayList();
         ObservableList<String> studentiData = FXCollections.observableArrayList();
         ObservableList<String> PredmetiData = FXCollections.observableArrayList();
-
+        TbData.setCellValueFactory(new PropertyValueFactory<>("date"));
+        TbOsenk.setCellValueFactory(new PropertyValueFactory<>("ocenka"));
         for (int x = 0; x < groups.size(); x++) {
             gruppData.add(groups.get(x).getGruppa());
         }
@@ -60,7 +79,8 @@ public class Prepopodovatel {
         Gruppi.getSelectionModel().selectedItemProperty()
                 .addListener((observable, oldValue, newValue) -> {
                     Predmeti.getItems().clear();
-                    otpravka.OtpUser("2", "null");
+                    studenti.getItems().clear();
+                    otpravka.OtpUser("2", newValue);
                     OtvJuser otvJuser = new OtvJuser();
                     users = otvJuser.getUsers();
                     String[] f = new String[0];
@@ -88,8 +108,33 @@ public class Prepopodovatel {
                                 studenti.setItems(studentiData);
                                 studenti.getSelectionModel().selectedItemProperty()
                                         .addListener((observableS, oldValueS, newValueS) -> {
+                                            TableOcen.getItems().clear();
+                                    String idS = "";
+                                    String idP = "";
+                                            for (int x = 0; x < predmetis.size(); x++) {
+                                                if (Objects.equals(newValueP, predmetis.get(x).getPredmet())) {
+                                                    idP = predmetis.get(x).getId();
+                                                }
+                                            }
+                                            for (int x = 0; x < users.size(); x++) {
+                                                if (Objects.equals(newValueS, users.get(x).getName() + " " + users.get(x).getLastname() + " " + users.get(x).getMidlename())) {
+                                                    idS = String.valueOf(users.get(x).getId());
+                                                }
+                                            }
 
+                                            otpravka.OtpOcenki(idP, idS);
+                                            OtvJocenk otvJocenk = new OtvJocenk();
+                                            ocenkas = otvJocenk.getOcenka();
+                                            for (int x = 0; x < users.size(); x++) {
+                                                usersData.add(ocenkas.get(x));
 
+                                            }
+                                            TableOcen.setItems(usersData);
+                                            
+//                                            Date now = new Date();
+//                                            DateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+//                                            String s = formatter.format(now);
+//                                            System.out.println(s);
                                         });
 
                             });
