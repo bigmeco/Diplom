@@ -2,33 +2,39 @@ package controlers;
 
 import POJO.*;
 import com.jfoenix.controls.JFXButton;
-import javafx.beans.value.ChangeListener;
+import com.jfoenix.transitions.JFXFillTransition;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import link.otvet.*;
 import link.zapros.Otpravka;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Stream;
 
 /**
  * Created by bigme on 07.06.2017.
  */
 public class Prepopodovatel {
+    private JFXFillTransition transition, transition2;
 
     public JFXButton DobavOcenk1;
     public JFXButton DobavOcenk2;
@@ -108,22 +114,18 @@ public class Prepopodovatel {
                     Predmeti.getSelectionModel().selectedItemProperty()
                             .addListener((ObservableValue<? extends String> observableP, String oldValueP, String newValueP) -> {
                                 studenti.getItems().clear();
-
                                 for (int x = 0; x < users.size(); x++) {
                                     studentiData.add(users.get(x).getName() + " " + users.get(x).getLastname() + " " + users.get(x).getMidlename());
                                 }
                                 studenti.setItems(studentiData);
                                 studenti.getSelectionModel().selectedItemProperty()
                                         .addListener((ObservableValue<? extends String> observableS, String oldValueS, String newValueS) -> {
-
                                             DobavOcenk1.setDisable(false);
                                             DobavOcenk2.setDisable(false);
                                             DobavOcenk3.setDisable(false);
                                             DobavOcenk4.setDisable(false);
                                             DobavOcenk5.setDisable(false);
-
                                             ObnvTB(newValueP, newValueS);
-
                                             Date now = new Date();
                                             DateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
                                             String s = formatter.format(now);
@@ -159,11 +161,9 @@ public class Prepopodovatel {
                                             Obnov.setOnAction((ActionEvent actionEvent) ->
                                                     ObnvTB(newValueP, newValueS)
                                             );
-
                                         });
                             });
                 });
-
     }
 
     public void exit(ActionEvent actionEvent) throws Exception {
@@ -190,11 +190,21 @@ public class Prepopodovatel {
         for (int x = 0; x < ocenkas.size(); x++) {
             usersData.add(ocenkas.get(x));
         }
-
-
     }
 
-    public void spravka(ActionEvent actionEvent) {
+    public void spravka(ActionEvent actionEvent) throws IOException {
+        Stage Prepods = new Stage();
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/FXML/spravka.fxml"));
+        Prepods.setMinHeight(240);
+        Prepods.setMinWidth(500);
+        Prepods.setScene(new Scene(root, 490, 240));
+        Prepods.setResizable(false);
+        Prepods.show();
+        transition = new JFXFillTransition(Duration.millis(6000), root, Color.WHITE, Color.valueOf("80CBC4"));
+        transition2 = new JFXFillTransition(Duration.millis(6000), root, Color.valueOf("80CBC4"), Color.WHITE);
+        transition.setOnFinished(event -> transition2.play());
+        transition2.setOnFinished(event -> transition.play());
+        transition.play();
 
     }
 

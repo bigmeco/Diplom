@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="240.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.spravka">
+   <children>
+      <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="600.0">
+         <items>
+            <Label text="Справка о разработчике" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="5.0" right="1.0" />
+               </padding>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="0.580952380952381" startX="1.0" startY="0.0761904761904762">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#0f9a39" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </items>
+      </ToolBar>
+      <TextArea editable="false" layoutY="40.0" prefHeight="62.0" prefWidth="600.0" text="Создали студеты:  Ильин Николай Алексеевич&#10;                              Дмитриев Сергей Андреевич">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextArea>
+      <ToolBar layoutY="102.0" prefHeight="40.0" prefWidth="600.0">
+         <items>
+            <Label text="Все исходники находяться по адресам" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="5.0" right="1.0" />
+               </padding>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="0.580952380952381" startX="1.0" startY="0.0761904761904762">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#994b0f" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </items>
+      </ToolBar>
+      <TextArea layoutY="142.0" prefHeight="88.0" prefWidth="600.0" text="https://github.com/bigmeco/Diplom&#10;https://github.com/bigmeco/test&#10;https://dnevnik.gamekillers.ru/dnevnik">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextArea>
+   </children>
+</AnchorPane>

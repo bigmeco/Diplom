@@ -62,6 +62,7 @@ public class OtvJlog {
         Prepods.setScene(new Scene(root, 890, 600));
         Prepods.setResizable(false);
         Prepods.show();
+
     }
 
     private void admin() throws IOException {
