@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -23,16 +25,16 @@
    <children>
       <MenuBar VBox.vgrow="NEVER">
          <menus>
+
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Separator disable="true" orientation="VERTICAL" />
+               </graphic>
+            </Menu>
             <Menu mnemonicParsing="false" text="Меню">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Новая группа" />
-                <MenuItem mnemonicParsing="false" onAction="#exit" text="Выход" />
-               </items>
-            </Menu>
-
-            <Menu mnemonicParsing="false" text="Помошь">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Справка" />
+                  <MenuItem mnemonicParsing="false" onAction="#spravka" text="Справка" />
+                  <MenuItem mnemonicParsing="false" onAction="#exit" text="Выход" />
                </items>
             </Menu>
          </menus>
@@ -131,7 +133,7 @@
                         </Label>
                      </items>
                   </ToolBar>
-                  <TableView fx:id="TableOcen" layoutY="40.0" prefHeight="512.0" prefWidth="336.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <TableView fx:id="TableOcen" layoutY="40.0" prefHeight="453.0" prefWidth="336.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="TbData" prefWidth="208.0" text="Дата" />
                       <TableColumn fx:id="TbOsenk" prefWidth="127.0" text="Оценка" />
@@ -140,6 +142,35 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
+                  <HBox layoutY="490.0" prefHeight="62.0" prefWidth="336.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <JFXButton fx:id="DobavOcenk1" blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" disable="true" prefHeight="75.0" prefWidth="73.0" ripplerFill="#800000" text="1">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="DobavOcenk2" blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" disable="true" prefHeight="75.0" prefWidth="73.0" ripplerFill="#8d4400" text="2">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="DobavOcenk3" blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" disable="true" prefHeight="75.0" prefWidth="73.0" ripplerFill="#849000" text="3">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="DobavOcenk4" blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" disable="true" prefHeight="75.0" prefWidth="73.0" ripplerFill="#549000" text="4">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="DobavOcenk5" blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" disable="true" prefHeight="75.0" prefWidth="73.0" ripplerFill="#008024" text="5">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
                </children>
             </AnchorPane>
          </items>

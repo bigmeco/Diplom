@@ -25,6 +25,7 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.setTitle("Diplom");
         primaryStage.setScene(new Scene(root, 300, 180));
+
         primaryStage.show();
         transition  = new JFXFillTransition(Duration.millis(3000),root, Color.valueOf("4CAF50"),Color.valueOf("009688"));
         transition2  = new JFXFillTransition(Duration.millis(3000),root,Color.valueOf("009688"),Color.valueOf("4CAF50"));

@@ -1,9 +1,7 @@
 package controlers;
 
-import POJO.Groups;
-import POJO.Ocenka;
-import POJO.Predmeti;
-import POJO.Users;
+import POJO.*;
+import com.jfoenix.controls.JFXButton;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -16,15 +14,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import link.otvet.OtvJgrups;
-import link.otvet.OtvJocenk;
-import link.otvet.OtvJpredmet;
-import link.otvet.OtvJuser;
+import link.otvet.*;
 import link.zapros.Otpravka;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
@@ -34,6 +30,11 @@ import java.util.stream.Stream;
  */
 public class Prepopodovatel {
 
+    public JFXButton DobavOcenk1;
+    public JFXButton DobavOcenk2;
+    public JFXButton DobavOcenk3;
+    public JFXButton DobavOcenk4;
+    public JFXButton DobavOcenk5;
     @FXML
     private ListView<String> Gruppi;
     @FXML
@@ -44,7 +45,7 @@ public class Prepopodovatel {
     private static List<Users> users;
     private static List<Ocenka> ocenkas;
     private static List<Predmeti> predmetis;
-
+    private static Jlogin jlogin;
     @FXML
     private TableView<Ocenka> TableOcen;
 
@@ -61,7 +62,8 @@ public class Prepopodovatel {
         otpravka.OtpPredmet();
         OtvJgrups otvJgrups = new OtvJgrups();
         groups = otvJgrups.getGroups();
-
+        OtvJlog otvJlog = new OtvJlog();
+        jlogin = otvJlog.getJlogin();
         OtvJpredmet otvJpredmet = new OtvJpredmet();
         predmetis = otvJpredmet.getPredmetis();
         ObservableList<Ocenka> usersData = FXCollections.observableArrayList();
@@ -77,7 +79,7 @@ public class Prepopodovatel {
 
         Gruppi.setItems(gruppData);
         Gruppi.getSelectionModel().selectedItemProperty()
-                .addListener((observable, oldValue, newValue) -> {
+                .addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
                     Predmeti.getItems().clear();
                     studenti.getItems().clear();
                     otpravka.OtpUser("2", newValue);
@@ -99,7 +101,7 @@ public class Prepopodovatel {
                     Predmeti.setItems(PredmetiData);
 
                     Predmeti.getSelectionModel().selectedItemProperty()
-                            .addListener((observableP, oldValueP, newValueP) -> {
+                            .addListener((ObservableValue<? extends String> observableP, String oldValueP, String newValueP) -> {
                                 studenti.getItems().clear();
 
                                 for (int x = 0; x < users.size(); x++) {
@@ -107,10 +109,15 @@ public class Prepopodovatel {
                                 }
                                 studenti.setItems(studentiData);
                                 studenti.getSelectionModel().selectedItemProperty()
-                                        .addListener((observableS, oldValueS, newValueS) -> {
+                                        .addListener((ObservableValue<? extends String> observableS, String oldValueS, String newValueS) -> {
                                             TableOcen.getItems().clear();
-                                    String idS = "";
-                                    String idP = "";
+                                            DobavOcenk1.setDisable(false);
+                                            DobavOcenk2.setDisable(false);
+                                            DobavOcenk3.setDisable(false);
+                                            DobavOcenk4.setDisable(false);
+                                            DobavOcenk5.setDisable(false);
+                                            String idS = "";
+                                            String idP = "";
                                             for (int x = 0; x < predmetis.size(); x++) {
                                                 if (Objects.equals(newValueP, predmetis.get(x).getPredmet())) {
                                                     idP = predmetis.get(x).getId();
@@ -125,16 +132,43 @@ public class Prepopodovatel {
                                             otpravka.OtpOcenki(idP, idS);
                                             OtvJocenk otvJocenk = new OtvJocenk();
                                             ocenkas = otvJocenk.getOcenka();
-                                            for (int x = 0; x < users.size(); x++) {
+                                            for (int x = 0; x < ocenkas.size(); x++) {
                                                 usersData.add(ocenkas.get(x));
-
                                             }
+
+                                            Date now = new Date();
+                                            DateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+                                            String s = formatter.format(now);
                                             TableOcen.setItems(usersData);
-                                            
-//                                            Date now = new Date();
-//                                            DateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
-//                                            String s = formatter.format(now);
-//                                            System.out.println(s);
+                                            String finalIdS = idS;
+                                            String finalIdP = idP;
+                                            HashMap mapjs = new HashMap();
+                                            mapjs.put("token", jlogin.getToken());
+                                            mapjs.put("date", s);
+                                            mapjs.put("predmet", finalIdP);
+                                            mapjs.put("student", finalIdS);
+                                            DobavOcenk1.setOnAction((ActionEvent actionEvent) -> {
+                                                mapjs.put("ocenka", "1");
+                                                otpravka.OtpAddOcenki(mapjs);
+                                                System.out.println("1 oos");
+
+                                            });
+                                            DobavOcenk2.setOnAction((ActionEvent actionEvent) -> {
+                                                mapjs.put("ocenka", "2");
+                                                otpravka.OtpAddOcenki(mapjs);
+                                            });
+                                            DobavOcenk3.setOnAction((ActionEvent actionEvent) -> {
+                                                mapjs.put("ocenka", "3");
+                                                otpravka.OtpAddOcenki(mapjs);
+                                            });
+                                            DobavOcenk4.setOnAction((ActionEvent actionEvent) -> {
+                                                mapjs.put("ocenka", "4");
+                                                otpravka.OtpAddOcenki(mapjs);
+                                            });
+                                            DobavOcenk5.setOnAction((ActionEvent actionEvent) -> {
+                                                mapjs.put("ocenka", "5");
+                                                otpravka.OtpAddOcenki(mapjs);
+                                            });
                                         });
 
                             });
@@ -146,14 +180,7 @@ public class Prepopodovatel {
         System.exit(0);
     }
 
-    public void DobavPred(ActionEvent actionEvent) {
 
-
-    }
-
-
-    public void DobavStud(ActionEvent actionEvent) {
-
-
+    public void spravka(ActionEvent actionEvent) {
     }
 }
