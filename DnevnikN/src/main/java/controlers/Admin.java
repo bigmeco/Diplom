@@ -81,7 +81,7 @@ public class Admin {
     private final ObservableList<String> strings = FXCollections.observableArrayList();
     private final ObservableList<String> predmetlist = FXCollections.observableArrayList();
     private final ObservableList<String> Doljyjst1 = FXCollections.observableArrayList("Администратор", "Преподовалель", "Студент");
-    int tape = 0;
+    private int tape = 0;
 
     private int id;
 

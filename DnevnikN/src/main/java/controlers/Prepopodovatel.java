@@ -9,7 +9,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
@@ -61,7 +60,7 @@ public class Prepopodovatel {
     @FXML
     private TableColumn<Ocenka, String> TbOsenk;
     private Otpravka otpravka = new Otpravka();
-    private ObservableList<Ocenka> usersData = FXCollections.observableArrayList();
+    private ObservableList<Ocenka> OcenkiData = FXCollections.observableArrayList();
     private ObservableList<String> gruppData = FXCollections.observableArrayList();
     private ObservableList<String> studentiData = FXCollections.observableArrayList();
     private ObservableList<String> PredmetiData = FXCollections.observableArrayList();
@@ -70,7 +69,6 @@ public class Prepopodovatel {
 
     @FXML
     public void initialize() {
-
         otpravka.OtpGroups();
         otpravka.OtpPredmet();
         OtvJgrups otvJgrups = new OtvJgrups();
@@ -79,7 +77,6 @@ public class Prepopodovatel {
         jlogin = otvJlog.getJlogin();
         OtvJpredmet otvJpredmet = new OtvJpredmet();
         predmetis = otvJpredmet.getPredmetis();
-
         TbData.setCellValueFactory(new PropertyValueFactory<>("date"));
         TbOsenk.setCellValueFactory(new PropertyValueFactory<>("ocenka"));
         for (Groups group1 : groups) {
@@ -128,7 +125,7 @@ public class Prepopodovatel {
                                             Date now = new Date();
                                             DateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
                                             String s = formatter.format(now);
-                                            TableOcen.setItems(usersData);
+                                            TableOcen.setItems(OcenkiData);
                                             String finalIdS = idS;
                                             String finalIdP = idP;
                                             HashMap mapjs = new HashMap();
@@ -186,7 +183,7 @@ public class Prepopodovatel {
         otpravka.OtpOcenki(idP, idS);
         OtvJocenk otvJocenk = new OtvJocenk();
         List<Ocenka> ocenkas = otvJocenk.getOcenka();
-        usersData.addAll(ocenkas);
+        OcenkiData.addAll(ocenkas);
     }
 
     public void spravka(ActionEvent actionEvent) throws IOException {

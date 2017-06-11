@@ -17,6 +17,17 @@ public class Info {
     @SerializedName("midlename")
     @Expose
     private String midlename;
+    @SerializedName("gruppa")
+    @Expose
+    private String gruppa;
+
+    public String getGruppa() {
+        return gruppa;
+    }
+
+    public void setGruppa(String gruppa) {
+        this.gruppa = gruppa;
+    }
 
     public String getId() {
         return id;
