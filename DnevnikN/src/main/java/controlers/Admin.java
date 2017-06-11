@@ -48,11 +48,13 @@ public class Admin {
     public Label vizobil4;
     public Label vizobil5;
     public Label vizobil3;
+    public Label vizobil32;
     public Label vizobil7;
     public Label vizobil6;
     public TextField logr;
     public TextField parr;
     public CheckComboBox SPpridmen;
+    public ComboBox<String> Doljyjst;
     public ComboBox<String> comboBox;
     public ComboBox<String> comboBox1;
     @FXML
@@ -78,6 +80,8 @@ public class Admin {
     private ObservableList<Users> usersData = FXCollections.observableArrayList();
     private final ObservableList<String> strings = FXCollections.observableArrayList();
     private final ObservableList<String> predmetlist = FXCollections.observableArrayList();
+    private final ObservableList<String> Doljyjst1 = FXCollections.observableArrayList("Администратор","Преподовалель","Студент");
+    int tape = 0;
 
     private int id;
 
@@ -105,11 +109,27 @@ public class Admin {
 
         SPpridmen.getItems().addAll(predmetlist);
         predmet.getItems().addAll(predmetlist);
-
         comboBox.setItems(strings);
+        Doljyjst.setItems(Doljyjst1);
         comboBox1.setItems(strings);
         comboBox.setOnAction(event -> OpredPrep(comboBox.getValue()));
         comboBox1.setOnAction(event -> OpredPrep(comboBox1.getValue()));
+        Doljyjst.getSelectionModel().selectedItemProperty()
+                .addListener((observable, oldValue, newValue) -> {
+                    if(Objects.equals("Администратор",newValue)){
+                        tape = 0;
+                        vizobil.setDisable(true);
+                        gryp.setDisable(true);
+                    }else if(Objects.equals("Преподовалель",newValue)){
+                        tape = 1;
+                        vizobil.setDisable(true);
+                        gryp.setDisable(true);
+                    }else if(Objects.equals("Студент",newValue)) {
+                        tape = 2;
+                        vizobil.setDisable(false);
+                        gryp.setDisable(false);
+                    }
+                });
     }
 
     private void OpredPrep(String g) {
@@ -132,6 +152,11 @@ public class Admin {
     public void Dalie(ActionEvent actionEvent) {
         OtvJlog otvJlog = new OtvJlog();
         jlogin = otvJlog.getJlogin();
+        String s ="0";
+        if(tape == 2){
+           s= gryp.getText();
+        }
+         System.out.println(Doljyjst.getValue());
         HashMap mapjs = new HashMap();
         mapjs.put("token", jlogin.getToken());
         mapjs.put("login", logr.getText());
@@ -139,8 +164,8 @@ public class Admin {
         mapjs.put("name", im.getText());
         mapjs.put("lastname", fm.getText());
         mapjs.put("midlename", ot.getText());
-        mapjs.put("gruppa", "0");
-        mapjs.put("type", "1");
+        mapjs.put("gruppa", s);
+        mapjs.put("type",tape);
         Otpravka otpravka = new Otpravka();
         otpravka.OtpReg(mapjs);
         OtvJreg otvJreg = new OtvJreg();
@@ -158,8 +183,10 @@ public class Admin {
             vizobil5.setDisable(true);
             vizobil4.setDisable(true);
             vizobil3.setDisable(true);
+            vizobil32.setDisable(true);
             vizobil.setDisable(false);
             vizobil1.setDisable(false);
+            Doljyjst.setDisable(true);
             gryp.setDisable(false);
             predmet.setDisable(false);
             plus.setDisable(false);
@@ -212,6 +239,8 @@ public class Admin {
         vizobil5.setDisable(false);
         vizobil4.setDisable(false);
         vizobil3.setDisable(false);
+        vizobil32.setDisable(false);
+        Doljyjst.setDisable(false);
         vizobil.setDisable(true);
         vizobil1.setDisable(true);
         gryp.setDisable(true);

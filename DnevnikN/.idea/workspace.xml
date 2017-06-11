@@ -78,18 +78,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Admin.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Admin.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controlers/Admin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1163">
-              <caret line="141" column="33" lean-forward="true" selection-start-line="141" selection-start-column="33" selection-end-line="141" selection-end-column="33" />
+            <state relative-caret-position="498">
+              <caret line="190" column="38" lean-forward="true" selection-start-line="190" selection-start-column="38" selection-end-line="190" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#OpredPrep#0;class#Admin#0" expanded="false" />
                 <element signature="method#Plus#0;class#Admin#0" expanded="false" />
                 <element signature="method#ObnovTab#0;class#Admin#0" expanded="false" />
-                <element signature="method#Obnovit#0;class#Admin#0" expanded="false" />
-                <marker date="1497188393243" expanded="true" signature="2545:2757" ph="..." />
+                <marker date="1497192033173" expanded="true" signature="2760:2972" ph="..." />
               </folding>
             </state>
           </provider>
@@ -98,21 +97,11 @@
       <file leaf-file-name="Prepopodovatel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controlers/Prepopodovatel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="71" column="56" lean-forward="false" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
+            <state relative-caret-position="289">
+              <caret line="60" column="66" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="60" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Retrofit_int.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/link/zapros/Retrofit_int.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="41" column="29" lean-forward="false" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -137,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Otpravka.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Otpravka.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/link/zapros/Otpravka.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+            <state relative-caret-position="221">
+              <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -626,7 +615,6 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/POJO/Predmeti.java" />
         <option value="$PROJECT_DIR$/src/main/java/link/otvet/OtvJpredmet.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/FXML/admin.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/FXML/prepodlog.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/link/otvet/OtvJlog.java" />
         <option value="$PROJECT_DIR$/src/main/java/POJO/Groups.java" />
@@ -638,8 +626,9 @@
         <option value="$PROJECT_DIR$/src/main/java/controlers/Prepopodovatel.java" />
         <option value="$PROJECT_DIR$/src/main/java/link/otvet/OtvJocenk.java" />
         <option value="$PROJECT_DIR$/src/main/java/POJO/Users.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controlers/Admin.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/FXML/admin.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/link/zapros/Otpravka.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controlers/Admin.java" />
       </list>
     </option>
   </component>
@@ -713,6 +702,36 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
               <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FXML" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DnevnikN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DnevnikN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1355,12 +1374,12 @@
       <workItem from="1496917640260" duration="13055000" />
       <workItem from="1497001882069" duration="3488000" />
       <workItem from="1497086977170" duration="8971000" />
-      <workItem from="1497186513203" duration="1601000" />
+      <workItem from="1497186513203" duration="4844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133337000" />
+    <option name="totallyTimeSpent" value="136580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="0" />
@@ -1603,54 +1622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/admin.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="242" column="55" lean-forward="false" selection-start-line="242" selection-start-column="55" selection-end-line="242" selection-end-column="55" />
-          <folding>
-            <marker date="1496929271803" expanded="true" signature="26709:28200" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="26776:26929" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="27004:27155" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="27225:27394" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="27465:28135" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="27623:28063" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="27699:27981" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="28454:29716" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="28509:28637" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="28700:28826" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="28884:29028" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="29087:29662" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="29233:29602" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="29295:29533" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="29869:31131" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="29924:30052" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="30115:30241" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="30299:30443" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="30502:31077" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="30648:31017" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="30710:30948" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="31421:32683" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="31476:31604" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="31667:31793" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="31851:31995" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="32054:32629" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="32200:32569" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="32262:32500" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="33064:33305" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="33119:33247" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="33950:34460" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="33988:34422" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="34171:34383" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="34214:34337" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="34663:34749" ph="..." />
-            <marker date="1496929271803" expanded="true" signature="34788:34804" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/link/otvet/OtvJgrup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1742,16 +1713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controlers/Prepopodovatel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="71" column="56" lean-forward="false" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/link/otvet/OtvJocenk.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1799,26 +1760,129 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controlers/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1163">
-          <caret line="141" column="33" lean-forward="true" selection-start-line="141" selection-start-column="33" selection-end-line="141" selection-end-column="33" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/admin.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="259" column="55" lean-forward="false" selection-start-line="259" selection-start-column="55" selection-end-line="259" selection-end-column="55" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#OpredPrep#0;class#Admin#0" expanded="false" />
-            <element signature="method#Plus#0;class#Admin#0" expanded="false" />
-            <element signature="method#ObnovTab#0;class#Admin#0" expanded="false" />
-            <element signature="method#Obnovit#0;class#Admin#0" expanded="false" />
-            <marker date="1497188393243" expanded="true" signature="2545:2757" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="18756:18849" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="18756:18893" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="19138:21182" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="19172:21155" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="19281:21120" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="19324:21078" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="19425:20004" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="19475:19955" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="20125:21034" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="20163:20996" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="20346:20558" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="20389:20512" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="20745:20957" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="20788:20911" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="21248:35516" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="21282:35489" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="21391:35454" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="21434:35412" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="21514:34737" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="21555:34693" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="21660:34553" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="21703:34507" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="21821:27305" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="21874:27252" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="22018:23509" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="22085:22238" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="22313:22464" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="22534:22703" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="22774:23444" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="22932:23372" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="23008:23290" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="23766:25028" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="23821:23949" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="24012:24138" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="24196:24340" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="24399:24974" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="24545:24914" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="24607:24845" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="25320:26582" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="25375:25503" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="25566:25692" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="25750:25894" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="25953:26528" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="26099:26468" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="26161:26399" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="26957:27198" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="27012:27140" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="27423:34463" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="27476:34410" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="27617:29108" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="27684:27837" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="27912:28063" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="28133:28302" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="28373:29043" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="28531:28971" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="28607:28889" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="29362:30624" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="29417:29545" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="29608:29734" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="29792:29936" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="29995:30570" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="30141:30510" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="30203:30441" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="30777:32039" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="30832:30960" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="31023:31149" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="31207:31351" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="31410:31985" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="31556:31925" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="31618:31856" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="32329:33591" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="32384:32512" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="32575:32701" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="32759:32903" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="32962:33537" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="33108:33477" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="33170:33408" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="33972:34213" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="34027:34155" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="34858:35368" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="34896:35330" ph="..." />
+            <marker date="1497189844769" expanded="true" signature="35696:35712" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/link/zapros/Otpravka.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        <state relative-caret-position="221">
+          <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controlers/Prepopodovatel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="60" column="66" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="60" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controlers/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="190" column="38" lean-forward="true" selection-start-line="190" selection-start-column="38" selection-end-line="190" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#OpredPrep#0;class#Admin#0" expanded="false" />
+            <element signature="method#Plus#0;class#Admin#0" expanded="false" />
+            <element signature="method#ObnovTab#0;class#Admin#0" expanded="false" />
+            <marker date="1497192033173" expanded="true" signature="2760:2972" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

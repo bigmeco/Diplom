@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -62,14 +61,6 @@
                               <Insets />
                            </opaqueInsets>
                         </Label>
-                        <JFXButton blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" onAction="#DobavPred" prefHeight="20.0" prefWidth="46.0" ripplerFill="#258000" text="+">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets left="50.0" />
-                           </opaqueInsets>
-                        </JFXButton>
                      </items>
                   </ToolBar>
                </children>
@@ -115,12 +106,6 @@
                               </LinearGradient>
                            </textFill>
                         </Label>
-                        <Pane prefHeight="30.0" prefWidth="86.0" />
-                        <JFXButton blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" onAction="#DobavStud" prefHeight="20.0" prefWidth="46.0" ripplerFill="#006080" text="+">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </JFXButton>
                      </items>
                   </ToolBar>
                   <ListView fx:id="studenti" layoutY="40.0" prefHeight="512.0" prefWidth="225.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />

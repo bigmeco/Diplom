@@ -23,7 +23,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.CheckComboBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.Admin">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.Admin">
     <opaqueInsets>
         <Insets />
     </opaqueInsets>
@@ -40,16 +40,13 @@
                                 <children>
                                     <ToolBar prefHeight="40.0" prefWidth="600.0">
                                         <items>
-                                            <Label fx:id="vizobil6" text=" Логин " textAlignment="CENTER">
+                                            <Label fx:id="vizobil6" prefHeight="27.0" prefWidth="57.0" text="Логин" textAlignment="CENTER">
                                                 <font>
                                                     <Font size="18.0" />
                                                 </font>
                                                 <opaqueInsets>
                                                     <Insets />
                                                 </opaqueInsets>
-                                                <padding>
-                                                    <Insets left="35.0" right="1.0" />
-                                                </padding>
                                                 <textFill>
                                                     <LinearGradient endX="1.0" endY="0.580952380952381" startX="1.0" startY="0.10476190476190476">
                                                         <stops>
@@ -59,21 +56,18 @@
                                                     </LinearGradient>
                                                 </textFill>
                                             </Label>
-                                            <TextField fx:id="logr" prefHeight="25.0" prefWidth="150.0" promptText="На латинице">
+                                            <TextField fx:id="logr" prefHeight="25.0" prefWidth="130.0" promptText="На латинице">
                                                 <opaqueInsets>
                                                     <Insets />
                                                 </opaqueInsets>
                                             </TextField>
-                                            <Label fx:id="vizobil7" text=" Пароль " textAlignment="CENTER">
+                                            <Label fx:id="vizobil7" prefHeight="27.0" prefWidth="78.0" text=" Пароль " textAlignment="CENTER">
                                                 <font>
                                                     <Font size="18.0" />
                                                 </font>
                                                 <opaqueInsets>
                                                     <Insets />
                                                 </opaqueInsets>
-                                                <padding>
-                                                    <Insets left="35.0" right="1.0" />
-                                                </padding>
                                                 <textFill>
                                                     <LinearGradient endX="1.0" endY="0.580952380952381" startX="1.0" startY="0.10476190476190476">
                                                         <stops>
@@ -82,17 +76,40 @@
                                                         </stops>
                                                     </LinearGradient>
                                                 </textFill>
+                                    <padding>
+                                       <Insets left="2.0" />
+                                    </padding>
                                             </Label>
-                                            <TextField fx:id="parr" prefHeight="25.0" prefWidth="150.0" promptText="На латинице">
+                                            <TextField fx:id="parr" prefHeight="25.0" prefWidth="130.0" promptText="На латинице">
                                                 <opaqueInsets>
                                                     <Insets />
                                                 </opaqueInsets>
                                             </TextField>
+                                 <Label fx:id="vizobil32" text="Должность" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="18.0" />
+                                    </font>
+                                    <opaqueInsets>
+                                       <Insets />
+                                    </opaqueInsets>
+                                    <padding>
+                                       <Insets left="5.0" right="1.0" />
+                                    </padding>
+                                    <textFill>
+                                       <LinearGradient endX="1.0" endY="0.580952380952381" startX="1.0" startY="0.10476190476190476">
+                                          <stops>
+                                             <Stop color="BLACK" />
+                                             <Stop color="#3573c9" offset="1.0" />
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                                 <ComboBox fx:id="Doljyjst" prefHeight="25.0" prefWidth="62.0" />
                                         </items>
                                     </ToolBar>
                                     <Pane fx:id="admcolor" layoutY="40.0" prefHeight="432.0" prefWidth="600.0">
                                         <children>
-                                            <Label fx:id="vizobil" disable="true" layoutX="14.0" layoutY="66.0" text="Группа" textAlignment="CENTER">
+                                            <Label fx:id="vizobil" disable="true" layoutX="14.0" layoutY="71.0" text="Группа" textAlignment="CENTER">
                                                 <font>
                                                     <Font size="18.0" />
                                                 </font>
@@ -111,7 +128,7 @@
                                                     </LinearGradient>
                                                 </textFill>
                                             </Label>
-                                            <Label fx:id="vizobil1" disable="true" layoutX="220.0" layoutY="66.0" text="Список предметов" textAlignment="CENTER">
+                                            <Label fx:id="vizobil1" disable="true" layoutX="220.0" layoutY="71.0" text="Список предметов" textAlignment="CENTER">
                                                 <font>
                                                     <Font size="18.0" />
                                                 </font>
@@ -155,7 +172,7 @@
                                                         <content>
                                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="125.0" prefWidth="600.0">
                                                                 <children>
-                                                                    <TextArea editable="false" prefHeight="115.0" prefWidth="600.0" rotate="180.0" style="-fx-background-color: #00856f;" text="Справка – это документ оперативной информации.&#10; Cоставляется справка с целью описания и подтверждения каких-либо фактов и событий:&#10; справка о подтверждении места учебы или работы, о занимаемой должности,&#10; заработной плате, месте проживания, медицинская справка и прочее. &#10;">
+                                                                    <TextArea editable="false" prefHeight="115.0" prefWidth="600.0" rotate="180.0" style="-fx-background-color: #00856f;" text="Справка – это документ оперативной информации.&#10; Должности:&#10;   А - Администратор;&#10;   П - Преподователь;&#10;   С - Студент.&#10;">
                                                                         <padding>
                                                                             <Insets left="1.0" />
                                                                         </padding>
@@ -169,8 +186,8 @@
                                                     </TitledPane>
                                                 </panes>
                                             </Accordion>
-                                            <TextField fx:id="gryp" disable="true" layoutX="15.0" layoutY="109.0" prefHeight="25.0" prefWidth="124.0" />
-                                            <Label fx:id="vizobil3" layoutX="15.0" layoutY="14.0" text="Имя" textAlignment="CENTER">
+                                            <TextField fx:id="gryp" disable="true" layoutX="15.0" layoutY="114.0" prefHeight="25.0" prefWidth="124.0" />
+                                            <Label fx:id="vizobil3" layoutX="15.0" layoutY="16.0" text="Имя" textAlignment="CENTER">
                                                 <font>
                                                     <Font size="18.0" />
                                                 </font>
@@ -189,12 +206,12 @@
                                                     </LinearGradient>
                                                 </textFill>
                                             </Label>
-                                            <TextField fx:id="im" layoutX="61.0" layoutY="15.0" prefHeight="25.0" prefWidth="115.0">
+                                            <TextField fx:id="im" layoutX="61.0" layoutY="17.0" prefHeight="25.0" prefWidth="115.0">
                                                 <opaqueInsets>
                                                     <Insets />
                                                 </opaqueInsets>
                                             </TextField>
-                                            <Label fx:id="vizobil4" layoutX="180.0" layoutY="14.0" text="Фамилия" textAlignment="CENTER">
+                                            <Label fx:id="vizobil4" layoutX="180.0" layoutY="16.0" text="Фамилия" textAlignment="CENTER">
                                                 <font>
                                                     <Font size="18.0" />
                                                 </font>
@@ -213,8 +230,8 @@
                                                     </LinearGradient>
                                                 </textFill>
                                             </Label>
-                                            <TextField fx:id="fm" layoutX="265.0" layoutY="15.0" prefHeight="25.0" prefWidth="115.0" />
-                                            <Label fx:id="vizobil5" layoutX="384.0" layoutY="14.0" text="Отчество" textAlignment="CENTER">
+                                            <TextField fx:id="fm" layoutX="265.0" layoutY="17.0" prefHeight="25.0" prefWidth="115.0" />
+                                            <Label fx:id="vizobil5" layoutX="384.0" layoutY="16.0" text="Отчество" textAlignment="CENTER">
                                                 <font>
                                                     <Font size="18.0" />
                                                 </font>
@@ -233,14 +250,14 @@
                                                     </LinearGradient>
                                                 </textFill>
                                             </Label>
-                                            <TextField fx:id="ot" layoutX="471.0" layoutY="15.0" prefHeight="25.0" prefWidth="115.0" />
-                                            <Separator layoutY="40.0" prefHeight="32.0" prefWidth="600.0" />
-                                 <JFXButton fx:id="plus" blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" disable="true" layoutX="498.0" layoutY="72.0" onAction="#Plus" prefHeight="57.0" prefWidth="61.0" ripplerFill="#008024" text="+">
+                                            <TextField fx:id="ot" layoutX="471.0" layoutY="17.0" prefHeight="25.0" prefWidth="115.0" />
+                                            <Separator layoutY="45.0" prefHeight="32.0" prefWidth="600.0" />
+                                 <JFXButton fx:id="plus" blendMode="HARD_LIGHT" buttonType="RAISED" cache="true" disable="true" layoutX="498.0" layoutY="77.0" onAction="#Plus" prefHeight="57.0" prefWidth="61.0" ripplerFill="#008024" text="+">
                                     <font>
                                        <Font size="28.0" />
                                     </font>
                                  </JFXButton>
-                                 <CheckComboBox fx:id="predmet" disable="true" layoutX="220.0" layoutY="109.0" prefHeight="25.0" prefWidth="244.0" />
+                                 <CheckComboBox fx:id="predmet" disable="true" layoutX="220.0" layoutY="114.0" prefHeight="25.0" prefWidth="244.0" />
                                         </children>
                                     </Pane>
                                 </children>
