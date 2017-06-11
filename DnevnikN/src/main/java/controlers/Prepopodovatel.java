@@ -35,6 +35,7 @@ public class Prepopodovatel {
     public JFXButton DobavOcenk3;
     public JFXButton DobavOcenk4;
     public JFXButton DobavOcenk5;
+    public JFXButton Obnov;
     @FXML
     private ListView<String> Gruppi;
     @FXML
@@ -54,10 +55,17 @@ public class Prepopodovatel {
 
     @FXML
     private TableColumn<Ocenka, String> TbOsenk;
+    Otpravka otpravka = new Otpravka();
+    ObservableList<Ocenka> usersData = FXCollections.observableArrayList();
+    ObservableList<String> gruppData = FXCollections.observableArrayList();
+    ObservableList<String> studentiData = FXCollections.observableArrayList();
+    ObservableList<String> PredmetiData = FXCollections.observableArrayList();
+    String idS = "";
+    String idP = "";
 
     @FXML
     public void initialize() {
-        Otpravka otpravka = new Otpravka();
+
         otpravka.OtpGroups();
         otpravka.OtpPredmet();
         OtvJgrups otvJgrups = new OtvJgrups();
@@ -66,10 +74,7 @@ public class Prepopodovatel {
         jlogin = otvJlog.getJlogin();
         OtvJpredmet otvJpredmet = new OtvJpredmet();
         predmetis = otvJpredmet.getPredmetis();
-        ObservableList<Ocenka> usersData = FXCollections.observableArrayList();
-        ObservableList<String> gruppData = FXCollections.observableArrayList();
-        ObservableList<String> studentiData = FXCollections.observableArrayList();
-        ObservableList<String> PredmetiData = FXCollections.observableArrayList();
+
         TbData.setCellValueFactory(new PropertyValueFactory<>("date"));
         TbOsenk.setCellValueFactory(new PropertyValueFactory<>("ocenka"));
         for (int x = 0; x < groups.size(); x++) {
@@ -110,31 +115,14 @@ public class Prepopodovatel {
                                 studenti.setItems(studentiData);
                                 studenti.getSelectionModel().selectedItemProperty()
                                         .addListener((ObservableValue<? extends String> observableS, String oldValueS, String newValueS) -> {
-                                            TableOcen.getItems().clear();
+
                                             DobavOcenk1.setDisable(false);
                                             DobavOcenk2.setDisable(false);
                                             DobavOcenk3.setDisable(false);
                                             DobavOcenk4.setDisable(false);
                                             DobavOcenk5.setDisable(false);
-                                            String idS = "";
-                                            String idP = "";
-                                            for (int x = 0; x < predmetis.size(); x++) {
-                                                if (Objects.equals(newValueP, predmetis.get(x).getPredmet())) {
-                                                    idP = predmetis.get(x).getId();
-                                                }
-                                            }
-                                            for (int x = 0; x < users.size(); x++) {
-                                                if (Objects.equals(newValueS, users.get(x).getName() + " " + users.get(x).getLastname() + " " + users.get(x).getMidlename())) {
-                                                    idS = String.valueOf(users.get(x).getId());
-                                                }
-                                            }
 
-                                            otpravka.OtpOcenki(idP, idS);
-                                            OtvJocenk otvJocenk = new OtvJocenk();
-                                            ocenkas = otvJocenk.getOcenka();
-                                            for (int x = 0; x < ocenkas.size(); x++) {
-                                                usersData.add(ocenkas.get(x));
-                                            }
+                                            ObnvTB(newValueP, newValueS);
 
                                             Date now = new Date();
                                             DateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
@@ -151,7 +139,6 @@ public class Prepopodovatel {
                                                 mapjs.put("ocenka", "1");
                                                 otpravka.OtpAddOcenki(mapjs);
                                                 System.out.println("1 oos");
-
                                             });
                                             DobavOcenk2.setOnAction((ActionEvent actionEvent) -> {
                                                 mapjs.put("ocenka", "2");
@@ -169,8 +156,11 @@ public class Prepopodovatel {
                                                 mapjs.put("ocenka", "5");
                                                 otpravka.OtpAddOcenki(mapjs);
                                             });
-                                        });
+                                            Obnov.setOnAction((ActionEvent actionEvent) ->
+                                                    ObnvTB(newValueP, newValueS)
+                                            );
 
+                                        });
                             });
                 });
 
@@ -181,6 +171,32 @@ public class Prepopodovatel {
     }
 
 
-    public void spravka(ActionEvent actionEvent) {
+    private void ObnvTB(String newValueP, String newValueS) {
+        TableOcen.getItems().clear();
+        for (int x = 0; x < predmetis.size(); x++) {
+            if (Objects.equals(newValueP, predmetis.get(x).getPredmet())) {
+                idP = predmetis.get(x).getId();
+            }
+        }
+        for (int x = 0; x < users.size(); x++) {
+            if (Objects.equals(newValueS, users.get(x).getName() + " " + users.get(x).getLastname() + " " + users.get(x).getMidlename())) {
+                idS = String.valueOf(users.get(x).getId());
+            }
+        }
+
+        otpravka.OtpOcenki(idP, idS);
+        OtvJocenk otvJocenk = new OtvJocenk();
+        ocenkas = otvJocenk.getOcenka();
+        for (int x = 0; x < ocenkas.size(); x++) {
+            usersData.add(ocenkas.get(x));
+        }
+
+
     }
+
+    public void spravka(ActionEvent actionEvent) {
+
+    }
+
+
 }

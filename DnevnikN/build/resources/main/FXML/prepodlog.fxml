@@ -130,7 +130,15 @@
                                  </stops>
                               </LinearGradient>
                            </textFill>
+                           <padding>
+                              <Insets right="220.0" />
+                           </padding>
                         </Label>
+                        <JFXButton fx:id="Obnov" buttonType="RAISED" ripplerFill="#003eff" text="⭯">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXButton>
                      </items>
                   </ToolBar>
                   <TableView fx:id="TableOcen" layoutY="40.0" prefHeight="453.0" prefWidth="336.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
