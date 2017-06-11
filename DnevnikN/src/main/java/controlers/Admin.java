@@ -80,7 +80,7 @@ public class Admin {
     private ObservableList<Users> usersData = FXCollections.observableArrayList();
     private final ObservableList<String> strings = FXCollections.observableArrayList();
     private final ObservableList<String> predmetlist = FXCollections.observableArrayList();
-    private final ObservableList<String> Doljyjst1 = FXCollections.observableArrayList("Администратор","Преподовалель","Студент");
+    private final ObservableList<String> Doljyjst1 = FXCollections.observableArrayList("Администратор", "Преподовалель", "Студент");
     int tape = 0;
 
     private int id;
@@ -88,7 +88,7 @@ public class Admin {
     @FXML
     public void initialize() {
         Otpravka otpravka = new Otpravka();
-        otpravka.OtpUser("1","null");
+        otpravka.OtpUser("1", "null");
         otpravka.OtpPredmet();
         OtvJpredmet otvJpredmet = new OtvJpredmet();
         predmetis = otvJpredmet.getPredmetis();
@@ -116,15 +116,15 @@ public class Admin {
         comboBox1.setOnAction(event -> OpredPrep(comboBox1.getValue()));
         Doljyjst.getSelectionModel().selectedItemProperty()
                 .addListener((observable, oldValue, newValue) -> {
-                    if(Objects.equals("Администратор",newValue)){
+                    if (Objects.equals("Администратор", newValue)) {
                         tape = 0;
                         vizobil.setDisable(true);
                         gryp.setDisable(true);
-                    }else if(Objects.equals("Преподовалель",newValue)){
+                    } else if (Objects.equals("Преподовалель", newValue)) {
                         tape = 1;
                         vizobil.setDisable(true);
                         gryp.setDisable(true);
-                    }else if(Objects.equals("Студент",newValue)) {
+                    } else if (Objects.equals("Студент", newValue)) {
                         tape = 2;
                         vizobil.setDisable(false);
                         gryp.setDisable(false);
@@ -152,11 +152,11 @@ public class Admin {
     public void Dalie(ActionEvent actionEvent) {
         OtvJlog otvJlog = new OtvJlog();
         jlogin = otvJlog.getJlogin();
-        String s ="0";
-        if(tape == 2){
-           s= gryp.getText();
+        String s = "0";
+        if (tape == 2) {
+            s = gryp.getText();
         }
-         System.out.println(Doljyjst.getValue());
+        System.out.println(Doljyjst.getValue());
         HashMap mapjs = new HashMap();
         mapjs.put("token", jlogin.getToken());
         mapjs.put("login", logr.getText());
@@ -165,7 +165,7 @@ public class Admin {
         mapjs.put("lastname", fm.getText());
         mapjs.put("midlename", ot.getText());
         mapjs.put("gruppa", s);
-        mapjs.put("type",tape);
+        mapjs.put("type", tape);
         Otpravka otpravka = new Otpravka();
         otpravka.OtpReg(mapjs);
         OtvJreg otvJreg = new OtvJreg();

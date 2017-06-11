@@ -13,9 +13,9 @@ public interface Otprav_int {
 
     void OtpGrup(Map<String, String> map);
 
-    void OtpUser(String type,String gruppa);
+    void OtpUser(String type, String gruppa);
 
-    void OtpAddPredmet(String token,String prepod,String predmet);
+    void OtpAddPredmet(String token, String prepod, String predmet);
 
     void OtpPredmet();
 

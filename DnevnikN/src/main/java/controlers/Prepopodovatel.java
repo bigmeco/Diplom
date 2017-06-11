@@ -50,7 +50,6 @@ public class Prepopodovatel {
     private ListView<String> studenti;
     private static List<Groups> groups;
     private static List<Users> users;
-    private static List<Ocenka> ocenkas;
     private static List<Predmeti> predmetis;
     private static Jlogin jlogin;
     @FXML
@@ -61,13 +60,13 @@ public class Prepopodovatel {
 
     @FXML
     private TableColumn<Ocenka, String> TbOsenk;
-    Otpravka otpravka = new Otpravka();
-    ObservableList<Ocenka> usersData = FXCollections.observableArrayList();
-    ObservableList<String> gruppData = FXCollections.observableArrayList();
-    ObservableList<String> studentiData = FXCollections.observableArrayList();
-    ObservableList<String> PredmetiData = FXCollections.observableArrayList();
-    String idS = "";
-    String idP = "";
+    private Otpravka otpravka = new Otpravka();
+    private ObservableList<Ocenka> usersData = FXCollections.observableArrayList();
+    private ObservableList<String> gruppData = FXCollections.observableArrayList();
+    private ObservableList<String> studentiData = FXCollections.observableArrayList();
+    private ObservableList<String> PredmetiData = FXCollections.observableArrayList();
+    private String idS = "";
+    private String idP = "";
 
     @FXML
     public void initialize() {
@@ -83,8 +82,8 @@ public class Prepopodovatel {
 
         TbData.setCellValueFactory(new PropertyValueFactory<>("date"));
         TbOsenk.setCellValueFactory(new PropertyValueFactory<>("ocenka"));
-        for (int x = 0; x < groups.size(); x++) {
-            gruppData.add(groups.get(x).getGruppa());
+        for (Groups group1 : groups) {
+            gruppData.add(group1.getGruppa());
         }
 
 
@@ -97,15 +96,15 @@ public class Prepopodovatel {
                     OtvJuser otvJuser = new OtvJuser();
                     users = otvJuser.getUsers();
                     String[] f = new String[0];
-                    for (int x = 0; x < groups.size(); x++) {
-                        if (Objects.equals(newValue, groups.get(x).getGruppa())) {
-                            f = groups.get(x).getPredmeti().trim().split(",");
+                    for (Groups group : groups) {
+                        if (Objects.equals(newValue, group.getGruppa())) {
+                            f = group.getPredmeti().trim().split(",");
                         }
                     }
-                    for (int t = 0; t < f.length; t++) {
-                        for (int x = 0; x < predmetis.size(); x++) {
-                            if (Objects.equals(f[t], predmetis.get(x).getId())) {
-                                PredmetiData.add(predmetis.get(x).getPredmet());
+                    for (String aF : f) {
+                        for (POJO.Predmeti predmeti : predmetis) {
+                            if (Objects.equals(aF, predmeti.getId())) {
+                                PredmetiData.add(predmeti.getPredmet());
                             }
                         }
                     }
@@ -114,8 +113,8 @@ public class Prepopodovatel {
                     Predmeti.getSelectionModel().selectedItemProperty()
                             .addListener((ObservableValue<? extends String> observableP, String oldValueP, String newValueP) -> {
                                 studenti.getItems().clear();
-                                for (int x = 0; x < users.size(); x++) {
-                                    studentiData.add(users.get(x).getName() + " " + users.get(x).getLastname() + " " + users.get(x).getMidlename());
+                                for (Users user : users) {
+                                    studentiData.add(user.getName() + " " + user.getLastname() + " " + user.getMidlename());
                                 }
                                 studenti.setItems(studentiData);
                                 studenti.getSelectionModel().selectedItemProperty()
@@ -173,23 +172,21 @@ public class Prepopodovatel {
 
     private void ObnvTB(String newValueP, String newValueS) {
         TableOcen.getItems().clear();
-        for (int x = 0; x < predmetis.size(); x++) {
-            if (Objects.equals(newValueP, predmetis.get(x).getPredmet())) {
-                idP = predmetis.get(x).getId();
+        for (POJO.Predmeti predmeti : predmetis) {
+            if (Objects.equals(newValueP, predmeti.getPredmet())) {
+                idP = predmeti.getId();
             }
         }
-        for (int x = 0; x < users.size(); x++) {
-            if (Objects.equals(newValueS, users.get(x).getName() + " " + users.get(x).getLastname() + " " + users.get(x).getMidlename())) {
-                idS = String.valueOf(users.get(x).getId());
+        for (Users user : users) {
+            if (Objects.equals(newValueS, user.getName() + " " + user.getLastname() + " " + user.getMidlename())) {
+                idS = String.valueOf(user.getId());
             }
         }
 
         otpravka.OtpOcenki(idP, idS);
         OtvJocenk otvJocenk = new OtvJocenk();
-        ocenkas = otvJocenk.getOcenka();
-        for (int x = 0; x < ocenkas.size(); x++) {
-            usersData.add(ocenkas.get(x));
-        }
+        List<Ocenka> ocenkas = otvJocenk.getOcenka();
+        usersData.addAll(ocenkas);
     }
 
     public void spravka(ActionEvent actionEvent) throws IOException {
@@ -200,8 +197,8 @@ public class Prepopodovatel {
         Prepods.setScene(new Scene(root, 490, 240));
         Prepods.setResizable(false);
         Prepods.show();
-        transition = new JFXFillTransition(Duration.millis(6000), root, Color.WHITE, Color.valueOf("80CBC4"));
-        transition2 = new JFXFillTransition(Duration.millis(6000), root, Color.valueOf("80CBC4"), Color.WHITE);
+        transition = new JFXFillTransition(Duration.millis(5000), root, Color.WHITE, Color.valueOf("80CBC4"));
+        transition2 = new JFXFillTransition(Duration.millis(5000), root, Color.valueOf("80CBC4"), Color.WHITE);
         transition.setOnFinished(event -> transition2.play());
         transition2.setOnFinished(event -> transition.play());
         transition.play();

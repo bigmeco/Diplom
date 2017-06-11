@@ -80,6 +80,7 @@ public class OtvJlog {
         transition.play();
         System.out.println(jloginO.getToken());
     }
+
     public Jlogin getJlogin() {
         System.out.println(jloginO.getToken());
         return jloginO;
