@@ -14,9 +14,10 @@ public class Otpravka implements Otprav_int {
 
     @Override
     public void OtpLog(String login, String password) {
-       // call.getLog("admin", "password")
-       // call.getLog("bigi", "1q2w3e4r")
+        // call.getLog("admin", "password")
+        //call.getLog("bigi", "1q2w3e4r")
         call.getLog("bigmen", "06111996")
+                //call.getLog(login, password)
                 .subscribe(s -> OtvJlog.setJlog(s));
     }
 
@@ -25,7 +26,6 @@ public class Otpravka implements Otprav_int {
     public void OtpReg(Map<String, String> map) {
         call.getReg(map)
                 .subscribe(s -> OtvJreg.setJreg(s));
-
     }
 
     @Override
@@ -33,15 +33,16 @@ public class Otpravka implements Otprav_int {
         call.getGrup(map)
                 .subscribe(s -> OtvJgrup.setJgrup(s));
     }
+
     @Override
-    public void OtpUser(String type,String gruppa) {
+    public void OtpUser(String type, String gruppa) {
         call.getUser(type, gruppa)
                 .subscribe(s -> OtvJuser.setUsers(s));
     }
 
     @Override
-    public void OtpAddPredmet(String token,String prepod,String predmet) {
-        call.getAddPredmet(token,prepod,predmet)
+    public void OtpAddPredmet(String token, String prepod, String predmet) {
+        call.getAddPredmet(token, prepod, predmet)
                 .subscribe(s -> OtvJgrup.setJgrup(s));
     }
 
@@ -65,7 +66,7 @@ public class Otpravka implements Otprav_int {
 
     @Override
     public void OtpOcenki(String predmet, String student) {
-        call.getOcenki(predmet,student)
+        call.getOcenki(predmet, student)
                 .subscribe(s -> OtvJocenk.setOcenka(s));
     }
 
