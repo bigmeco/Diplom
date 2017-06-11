@@ -22,6 +22,18 @@ public class Users {
     @Expose
     private String midlename;
 
+    @SerializedName("gruppa")
+    @Expose
+    private String gruppa;
+
+    public String getGruppa() {
+        return gruppa;
+    }
+
+    public void setGruppa(String gruppa) {
+        this.gruppa = gruppa;
+    }
+
     public Users(Integer id, String type, String name, String lastname, String midlename) {
         this.id = id;
         this.type = type;
@@ -30,7 +42,17 @@ public class Users {
         this.midlename = midlename;
     }
 
+    public Users(Integer id, String type, String name, String lastname, String midlename, String gruppa) {
+        this.id = id;
+        this.type = type;
+        this.name = name;
+        this.lastname = lastname;
+        this.midlename = midlename;
+        this.gruppa = gruppa;
+    }
+
     public Users(Integer id, String name, String lastname, String midlename) {
+
         this.id = id;
         this.name = name;
         this.lastname = lastname;

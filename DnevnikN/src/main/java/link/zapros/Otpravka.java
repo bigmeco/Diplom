@@ -56,5 +56,17 @@ public class Otpravka implements Otprav_int {
                 .subscribe(s -> OtvJgrups.setGroups(s));
     }
 
+    @Override
+    public void OtpAddOcenki(Map<String, String> map) {
+        call.getAddOcenki(map)
+                .subscribe(s -> OtvJgrup.setJgrup(s));
+    }
+
+    @Override
+    public void OtpOcenki(String predmet, String student) {
+        call.getOcenki(predmet,student)
+                .subscribe(s -> OtvJocenk.setOcenka(s));
+    }
+
 
 }

@@ -20,4 +20,9 @@ public interface Otprav_int {
     void OtpPredmet();
 
     void OtpGroups();
+
+    void OtpAddOcenki(Map<String, String> map);
+
+    void OtpOcenki(String predmet, String student);
+
 }

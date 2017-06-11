@@ -139,6 +139,7 @@ public class Admin {
         mapjs.put("name", im.getText());
         mapjs.put("lastname", fm.getText());
         mapjs.put("midlename", ot.getText());
+        mapjs.put("gruppa", "0");
         mapjs.put("type", "1");
         Otpravka otpravka = new Otpravka();
         otpravka.OtpReg(mapjs);

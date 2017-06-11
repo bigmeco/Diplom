@@ -70,7 +70,6 @@ public class Prepopodovatel {
                         }
                     }
                     for (int t = 0; t < f.length; t++) {
-
                         for (int x = 0; x < predmetis.size(); x++) {
                             if (Objects.equals(f[t], predmetis.get(x).getId())) {
                                 PredmetiData.add(predmetis.get(x).getPredmet());
